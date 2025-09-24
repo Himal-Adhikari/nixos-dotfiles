@@ -10,4 +10,7 @@
       "privacy.clearOnShutdown.downloads" = false;
     };
   };
+  home.packages = with pkgs; [
+    librewolf
+  ];
 }

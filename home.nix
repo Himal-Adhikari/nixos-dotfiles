@@ -22,10 +22,16 @@
     ./user/pkgs/keepass.nix
     ./user/pkgs/pdf.nix
     ./user/pkgs/files.nix
+
+    ./user/style/style.nix
+
+    ./user/utilities.nix
+
     ./user/app/terminal/terminal.nix
     ./user/app/video/video.nix
     ./user/app/image/image.nix
     ./user/lang/rust/rust.nix
+    ./user/app/browser/browser.nix
   ];
 
   home.file = {

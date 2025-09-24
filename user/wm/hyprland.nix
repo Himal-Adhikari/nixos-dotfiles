@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{pkgs, config, ...}:
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -133,7 +133,7 @@ input {
 }
 
 gestures {
-    workspace_swipe = true
+    # workspace_swipe = true
 }
 
 device {

@@ -37,22 +37,9 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable udisks
-  services.udisks2.enable = true;
-
-  # Blueman support
-  services.blueman.enable = true;
-
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  # programs.hyprland.enable = true;
   # programs.hyprland.xwayland.enable = true;
   # services.xserver.desktopManager.gnome.enable = true;
-  
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    
-  ];
 
   # Configure keymap in X11
   services.xserver.xkb = {
