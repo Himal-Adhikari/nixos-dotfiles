@@ -41,6 +41,12 @@ in
     shellAliases = myAliases;
   };
 
+  programs.git = {
+    enable = true;
+    userEmail = "himalad321@gmail.com";
+    userName = "Himal Adhikari";
+  };
+  
   home.packages = with pkgs; [
     ripgrep
     bat
@@ -58,11 +64,10 @@ in
     dust
     yazi
     gitui
-    git
     zoxide
     tealdeer
     lshw
-    libsecret
+    gh
   ];
   
 }
