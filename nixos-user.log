@@ -1,0 +1,30 @@
+warning: Git tree '/home/himal/stuff/nixos-dotfiles' is dirty
+warning: Git tree '/home/himal/stuff/nixos-dotfiles' is dirty
+warning: Git tree '/home/himal/stuff/nixos-dotfiles' is dirty
+warning: Git tree '/home/himal/stuff/nixos-dotfiles' is dirty
+these 3 derivations will be built:
+  /nix/store/6pgqzcss26j3rd8cpwvffi51j60d6kh5-home-manager-path.drv
+  /nix/store/4x886sd445avfwihpd6vr6v1yb7j5ss0-activation-script.drv
+  /nix/store/7prh24z303k93rz177clnd14zhv6wlpg-home-manager-generation.drv
+building '/nix/store/6pgqzcss26j3rd8cpwvffi51j60d6kh5-home-manager-path.drv'...
+building '/nix/store/4x886sd445avfwihpd6vr6v1yb7j5ss0-activation-script.drv'...
+building '/nix/store/7prh24z303k93rz177clnd14zhv6wlpg-home-manager-generation.drv'...
+Starting Home Manager activation
+Activating checkFilesChanged
+Activating checkKittyTheme
+Activating checkLinkTargets
+Activating writeBoundary
+Activating installPackages
+replacing old 'home-manager-path'
+installing 'home-manager-path'
+building '/nix/store/q4gsi9jlnzd849pa1fmnl9zv447fmxl0-user-environment.drv'...
+Activating linkGeneration
+Cleaning up orphan links from /home/himal
+Creating home file links in /home/himal
+Activating onFilesChange
+Activating reloadSystemd
+warning: Git tree '/home/himal/stuff/nixos-dotfiles' is dirty
+
+There are 287 unread and relevant news items.
+Read them by running the command "home-manager news".
+
