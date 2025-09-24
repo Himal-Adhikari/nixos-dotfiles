@@ -29,7 +29,6 @@
   ];
 
   home.file = {
-    ".config/hypr/hyprland.conf".source = ./user/wm/hyprland.conf;
   };
 
   home.sessionVariables = {

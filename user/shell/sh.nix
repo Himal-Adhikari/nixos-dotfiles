@@ -56,7 +56,6 @@ in
     openssl 
     file
     dust
-    gh
     yazi
     gitui
     git
