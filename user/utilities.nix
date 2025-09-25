@@ -1,9 +1,8 @@
-{pkgs, ...}:
+{pkgs, stable, ...}:
 {
   home.packages = with pkgs; [
     pavucontrol
     ffmpeg
-    gsettings-desktop-schemas
-    glib
+    speedtest-rs
   ];
 }

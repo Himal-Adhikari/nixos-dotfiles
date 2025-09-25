@@ -19,7 +19,7 @@
     nixpkgs-kicad,
     home-manager,
     ...
-  } : let
+  } @ inputs: let
     inherit (self) outputs;
     system = "x86_64-linux";
     stable = import nixpkgs-stable {
@@ -33,20 +33,19 @@
      nixosConfigurations = {
       himal = nixpkgs.lib.nixosSystem {
         specialArgs = {
-          inherit stable;
-          inherit kicad-nix;
+          inherit stable kicad-nix inputs outputs;
         };
         modules = [
           ./configuration.nix
         ];
       };
     };
+
     homeConfigurations = {
       himal = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = {
-          inherit stable;
-          inherit kicad-nix;
+          inherit stable kicad-nix inputs outputs;
         };
         modules = [
           ./home.nix

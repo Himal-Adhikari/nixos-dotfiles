@@ -1,13 +1,24 @@
-{config, pkgs, ...}:
+{ pkgs, ... }:
+
 {
   home.packages = with pkgs; [
-    qt6ct
-    gnome-themes-extra
-    adwaita-icon-theme
+    glib
+    dconf 
   ];
+  
+  qt = {
+    enable = true;
+    platformTheme.name = "qtct";
+    style.name = "kvantum";
+  };
 
-  home.sessionVariables = {
-    QT_QPA_PLATFORMTHEME = "qt6ct";
+  xdg.configFile = {
+    "Kvantum/kvantum.kvconfig".text = ''
+       [General]
+       theme=MateriaDark
+     '';
+
+     "Kvantum/Materia".source = "${pkgs.materia-kde-theme}/share/Kvantum/Materia";
   };
 
   gtk = {
@@ -25,11 +36,7 @@
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       "color-scheme" = "prefer-dark";
-      # "gtk-theme" = "Adwaita-dark";
+      "gtk-theme" = "Adwaita-dark";
     };
-  };
-
-  home.sessionVariables = {
-    GTK_THEME = "Adwaita-dark";
   };
 }

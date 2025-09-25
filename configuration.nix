@@ -10,8 +10,8 @@
       ./system/hardware-configuration.nix
       ./system/hardware/nvidia-drivers.nix
       ./system/hardware/intel-drivers.nix
-      ./system/packages.nix
       ./system/fonts.nix
+      ./user/pkgs/files.nix
     ];
 
   # Bootloader.
@@ -47,6 +47,40 @@
     variant = "";
   };
 
+  services.dbus = {
+    enable = true;
+    packages = [ pkgs.dconf ];
+  };
+
+  programs.dconf.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    libsForQt5.qtstyleplugin-kvantum
+    libsForQt5.qt5ct
+    coreutils-full
+    vim
+    curl
+    mesa
+  ];
+
+  services.udisks2.enable = true;
+  services.blueman.enable = true;
+
+  services.displayManager.sddm.enable = true;
+  programs.hyprland.enable = true;
+
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    
+  ];
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal
+      pkgs.xdg-desktop-portal-gtk
+    ];
+  };
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -58,16 +92,13 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+  services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.himal = {
@@ -133,5 +164,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
-
 }

@@ -43,8 +43,6 @@ in
 
   programs.git = {
     enable = true;
-    userEmail = "himalad321@gmail.com";
-    userName = "Himal Adhikari";
   };
   
   home.packages = with pkgs; [
@@ -68,6 +66,7 @@ in
     tealdeer
     lshw
     gh
+    btop
   ];
   
 }

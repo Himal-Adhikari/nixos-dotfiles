@@ -10,5 +10,6 @@
       material-icons
       adwaita-icon-theme
     ];
+    fontconfig.useEmbeddedBitmaps = true;
   };
 }

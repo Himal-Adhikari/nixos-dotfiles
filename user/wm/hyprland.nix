@@ -9,7 +9,7 @@
 monitor=,preferred,auto,1
 
 $terminal = kitty
-$fileManager = nautilus
+$fileManager = thunar
 $menu = wofi --show drun --allow-images
 $browser = librewolf
 
@@ -24,6 +24,8 @@ env = HYPRCURSOR_SIZE,24
 env = LIBVA_DRIVER_NAME,nvidia
 env = __GLX_VENDOR_LIBRARY_NAME,nvidia
 env = ELECTRON_OZONE_PLATFORM_HINT,auto
+
+env = QT_STYLE_OVERRIDE,kvantum
 
 general {
     gaps_in = 0
