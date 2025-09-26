@@ -6,7 +6,7 @@
 
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["tray", "pulseaudio", "backlight", "battery"],
+    "modules-right": ["tray", "pulseaudio", "backlight", "battery", "custom/power"],
 
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -50,6 +50,11 @@
         "format-plugged": " {capacity}%",
         "format-alt": "{time} {icon}",
         "format-icons": ["", "", "", "", ""]
+    },
+
+    "custom/power": {
+        "format": "⏻",
+        "on-click": "wlogout --protocol layer-shell"
     },
 
     "tray": {

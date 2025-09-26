@@ -11,8 +11,12 @@
       ./system/hardware/nvidia-drivers.nix
       ./system/hardware/intel-drivers.nix
       ./system/fonts.nix
-      ./user/pkgs/files.nix
       ./system/login.nix
+
+      # Thunar and suwayomi have to be configured as a service and cannot be
+      # configured using home-manager
+      ./user/pkgs/files.nix
+      ./user/pkgs/suwayomi.nix
     ];
 
   # Bootloader.
