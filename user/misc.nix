@@ -4,5 +4,6 @@
     pavucontrol
     ffmpeg
     speedtest-rs
+    suwayomi-server
   ];
 }

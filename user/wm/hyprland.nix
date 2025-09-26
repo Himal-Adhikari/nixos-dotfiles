@@ -1,5 +1,10 @@
 {pkgs, config, ...}:
 {
+
+  imports = [
+    ./waybar.nix
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
     portalPackage = pkgs.xdg-desktop-portal-hyprland; # xdph none git
@@ -17,6 +22,8 @@ exec-once = systemctl --user start hyprpolkitagent
 exec-once = udiskie
 exec-once = hyprpaper
 exec-once = wl-clip-persist --clipboard regular
+exec-once = nm-applet
+exec-once = waybar
 
 env = XCURSOR_SIZE,24
 env = HYPRCURSOR_SIZE,24
@@ -212,7 +219,6 @@ bindl = , XF86AudioPrev, exec, playerctl previous
   };
 
   home.packages = with pkgs; [
-    waybar
     hyprpolkitagent
     dunst
     udiskie

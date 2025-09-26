@@ -22,7 +22,7 @@
       runners.wine.settings.system = {
         mangohud = true;
         gamescope = false;
-        gamescope_fsr_sharpness = 2.0;
+        gamescope_fsr_sharpness = 1.0;
         gamescope_fps_limiter = 60;
       };
       runners.wine.settings.runner = {

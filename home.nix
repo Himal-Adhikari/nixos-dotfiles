@@ -26,7 +26,7 @@
 
     ./user/style/style.nix
 
-    ./user/utilities.nix
+    ./user/misc.nix
 
     ./user/app/lutris/lutris.nix
     ./user/app/terminal/terminal.nix

@@ -1,7 +1,6 @@
-{config, pkgs, ...}:
+{pkgs, ...}:
 {
-  programs.obsidian = {
-    enable = true;
-    defaultSettings.themes = ["Primary"];
-  };
+  home.packages = with pkgs; [
+    obsidian
+  ];
 }
