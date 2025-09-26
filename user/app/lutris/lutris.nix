@@ -1,4 +1,4 @@
-{pkgs, config, ...}:
+{pkgs, config, stable, ...}:
 {
     programs.lutris = {
       enable = true;

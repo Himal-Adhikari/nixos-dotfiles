@@ -12,6 +12,7 @@
       ./system/hardware/intel-drivers.nix
       ./system/fonts.nix
       ./user/pkgs/files.nix
+      ./system/login.nix
     ];
 
   # Bootloader.
@@ -66,7 +67,6 @@
   services.udisks2.enable = true;
   services.blueman.enable = true;
 
-  services.displayManager.sddm.enable = true;
   programs.hyprland.enable = true;
 
   programs.nix-ld.enable = true;

@@ -1,8 +1,21 @@
 {pkgs, config, ...}:
 {
+  home.packages = with pkgs; [
+    hyprpolkitagent
+    dunst
+    udiskie
+    wl-clip-persist
+    nwg-look
+    wl-clipboard
+    wofi
+    networkmanagerapplet
+    brightnessctl
+    hyprls
+  ];
 
   imports = [
     ./waybar.nix
+    ./wlogout.nix
   ];
 
   wayland.windowManager.hyprland = {
@@ -159,6 +172,7 @@ bind = $mainMod, Q, killactive,
 bind = $mainMod, T, exec, $fileManager
 bind = $mainMod, Space, togglefloating,
 bind = $mainMod, R, exec, $menu
+bind = $mainMod, escape, exec, wlogout --protocol layer-shell
 
 bind = $mainMod, H, movefocus, l
 bind = $mainMod, L, movefocus, r
@@ -218,16 +232,7 @@ bindl = , XF86AudioPrev, exec, playerctl previous
     };
   };
 
-  home.packages = with pkgs; [
-    hyprpolkitagent
-    dunst
-    udiskie
-    wl-clip-persist
-    nwg-look
-    wl-clipboard
-    wofi
-    networkmanagerapplet
-    brightnessctl
-    hyprls
-  ];
+  programs.hyprlock = {
+    enable = true;  
+  };
 }

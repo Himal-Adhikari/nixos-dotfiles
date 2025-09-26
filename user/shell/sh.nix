@@ -67,6 +67,7 @@ in
     lshw
     gh
     btop
+    neofetch
   ];
   
 }
