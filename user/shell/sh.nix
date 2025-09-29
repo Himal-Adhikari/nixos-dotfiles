@@ -34,12 +34,6 @@ in
       enable = true;
       theme = "muse";
     };
-
-    prezto = {
-      tmux.autoStartLocal = true;      
-      caseSensitive = false;
-      editor.keymap = "vi";
-    };
   };
 
   programs.bash = {

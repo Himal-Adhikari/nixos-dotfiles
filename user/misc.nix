@@ -5,5 +5,6 @@
     ffmpeg
     speedtest-rs
     suwayomi-server
+    localsend
   ];
 }
