@@ -1,4 +1,4 @@
-{pkgs, stable, ...}:
+{pkgs, ...}:
 {
   home.packages = with pkgs; [
     pavucontrol
@@ -6,5 +6,10 @@
     speedtest-rs
     suwayomi-server
     localsend
+    # Nix lsp
+    nil
+
+    dpkg
+    patchelf
   ];
 }

@@ -38,7 +38,6 @@ in
 
   programs.bash = {
     enable = true;
-    shellAliases = myAliases;
   };
 
   programs.git = {
@@ -67,6 +66,7 @@ in
     gh
     btop
     neofetch
+    fzf
   ];
   
 }
