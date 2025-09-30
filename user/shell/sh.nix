@@ -10,6 +10,11 @@ myAliases = {
 };
 in
 {
+  imports = [
+    ./tmux.nix
+    ./btop.nix
+  ];
+  
   programs.zsh = {
     enable = true;
     shellAliases = myAliases;
@@ -48,7 +53,6 @@ in
     ripgrep
     bat
     htop
-    helix
     unzip
     wget
     unrar
@@ -64,7 +68,6 @@ in
     tealdeer
     lshw
     gh
-    btop
     neofetch
     fzf
   ];

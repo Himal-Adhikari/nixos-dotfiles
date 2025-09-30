@@ -13,7 +13,6 @@
   imports = [
     ./user/wm/hyprland.nix
     ./user/shell/sh.nix
-    ./user/shell/tmux.nix
 
     ./user/lang/stm32/stm32.nix
     ./user/lang/c_cpp/c_cpp.nix
@@ -24,6 +23,7 @@
     ./user/pkgs/keepass.nix
     ./user/pkgs/pdf.nix
     ./user/pkgs/torrent.nix
+    ./user/pkgs/helix.nix
 
     ./user/style/style.nix
 

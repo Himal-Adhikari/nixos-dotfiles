@@ -1,4 +1,4 @@
-{pkgs, config, ...}:
+{pkgs, ...}:
 {
   home.packages = with pkgs; [
     hyprpolkitagent
@@ -210,6 +210,13 @@ bind = $mainMod, mouse_up, workspace, e-1
 bindm = $mainMod, mouse:272, movewindow
 bindm = $mainMod, mouse:273, resizewindow
 
+# Screenshot a window
+bind = $mainMod, PRINT, exec, hyprshot -m window
+# Screenshot a monitor
+bind = , PRINT, exec, hyprshot -m output
+# Screenshot a region
+bind = SHIFT, PRINT, exec, hyprshot -m region
+
 bindel = ,XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+
 bindel = ,XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
 bindel = ,XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
@@ -227,12 +234,17 @@ bindl = , XF86AudioPrev, exec, playerctl previous
   services.hyprpaper = {
     enable = true;
     settings = {
-      preload = [ "/home/himal/Pictures/Pictures/Wallpapers/victorian.png" ];
-      wallpaper = ", /home/himal/Pictures/Pictures/Wallpapers/victorian.png";
+      preload = [ "/home/himal/Pictures/Pictures/Wallpapers/my-neighbor-totoro-sunflowers.png" ];
+      wallpaper = ", /home/himal/Pictures/Pictures/Wallpapers/my-neighbor-totoro-sunflowers.png";
     };
   };
 
   programs.hyprlock = {
     enable = true;  
+  };
+
+  programs.hyprshot = {
+    enable = true;  
+    saveLocation = "$HOME/Pictures/Screenshots";
   };
 }
