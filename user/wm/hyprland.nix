@@ -45,6 +45,9 @@ exec-once = waybar
 env = XCURSOR_SIZE,24
 env = HYPRCURSOR_SIZE,24
 
+env = QT_QPA_PLATFORMTHEME,"wayland;xcb"
+env = LIBVA_DRIVER_NAME,nvidia
+env = __GLX_VENDOR_LIBRARY_NAME,nvidia
 env = ELECTRON_OZONE_PLATFORM_HINT,auto
 
 env = QT_STYLE_OVERRIDE,kvantum

@@ -1,15 +1,6 @@
 { lib, pkgs, config, ... }:
 with lib;
 {
-  # options.drivers.nvidia = {
-  #   enable = mkEnableOption "Enable Nvidia Drivers";
-  # };
-
-
-  # config = mkIf cfg.enable {
-  #   services.xserver.videoDrivers = [ "nvidia" ];
-    
-
   hardware.graphics = {
   	enable = true;
   	enable32Bit = true;
@@ -75,13 +66,5 @@ with lib;
 		intelBusId = "PCI:0:2:0";
 		nvidiaBusId = "PCI:1:0:0";
     # amdgpuBusId = "PCI:54:0:0"; For AMD GPU
-	};
-
-	environment.sessionVariables = {
-	  QT_QPA_PLATFORMTHEME = "wayland;xcb";
-	  GBM_BACKEND = "nvidia-drm";
-    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-    LIBVA_DRIVER_NAME = "nvidia";
-    ENABLE_VKBASALT = "1";
 	};
 }

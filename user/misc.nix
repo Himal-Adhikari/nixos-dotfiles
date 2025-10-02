@@ -14,5 +14,6 @@
     patchelf
     fastfetch
     inkscape
+    linux-wifi-hotspot
   ];
 }
