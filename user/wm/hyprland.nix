@@ -1,5 +1,9 @@
 {pkgs, ...}:
 {
+  home.sessionVariables = {
+    "NIXOS_OZONE_WL" = "1";
+  };
+
   home.packages = with pkgs; [
     hyprpolkitagent
     dunst
@@ -41,8 +45,6 @@ exec-once = waybar
 env = XCURSOR_SIZE,24
 env = HYPRCURSOR_SIZE,24
 
-env = LIBVA_DRIVER_NAME,nvidia
-env = __GLX_VENDOR_LIBRARY_NAME,nvidia
 env = ELECTRON_OZONE_PLATFORM_HINT,auto
 
 env = QT_STYLE_OVERRIDE,kvantum
@@ -234,8 +236,8 @@ bindl = , XF86AudioPrev, exec, playerctl previous
   services.hyprpaper = {
     enable = true;
     settings = {
-      preload = [ "/home/himal/Pictures/Pictures/Wallpapers/my-neighbor-totoro-sunflowers.png" ];
-      wallpaper = ", /home/himal/Pictures/Pictures/Wallpapers/my-neighbor-totoro-sunflowers.png";
+      preload = [ "/home/himal/Pictures/Wallpapers/my-neighbor-totoro-sunflowers.png" ];
+      wallpaper = ", /home/himal/Pictures/Wallpapers/my-neighbor-totoro-sunflowers.png";
     };
   };
 

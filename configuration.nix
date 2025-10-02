@@ -17,6 +17,7 @@
       # configured using home-manager
       ./user/pkgs/files.nix
       ./user/pkgs/suwayomi.nix
+      ./user/pkgs/gamescope.nix
     ];
 
   # Bootloader.

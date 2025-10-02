@@ -13,5 +13,6 @@
     dpkg
     patchelf
     fastfetch
+    inkscape
   ];
 }

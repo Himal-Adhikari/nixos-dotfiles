@@ -5,6 +5,7 @@
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-kicad.url = "github:nixos/nixpkgs/69ee1d82f1fa4c70a3dc9a64111e7eef3b8e4527";
+    nixpkgs-gamescope.url ="github:nixos/nixpkgs/8fcb6f1c4948305af52d19f887b89011ee2c080d";
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -20,12 +21,16 @@
     nixpkgs,
     nixpkgs-stable,
     nixpkgs-kicad,
+    nixpkgs-gamescope,
     home-manager,
     ...
   } @ inputs: let
     inherit (self) outputs;
     system = "x86_64-linux";
     stable = import nixpkgs-stable {
+      inherit system;
+    };
+    gamescope-nix = import nixpkgs-gamescope {
       inherit system;
     };
     kicad-nix = import nixpkgs-kicad {
@@ -48,7 +53,7 @@
       himal = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = {
-          inherit stable kicad-nix inputs outputs;
+          inherit stable kicad-nix gamescope-nix  outputs;
         };
         modules = [
           ./home.nix

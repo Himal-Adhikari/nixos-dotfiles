@@ -1,8 +1,5 @@
 { lib, pkgs, config, ... }:
 with lib;
-let
-  cfg = config.drivers.nvidia;
-in
 {
   # options.drivers.nvidia = {
   #   enable = mkEnableOption "Enable Nvidia Drivers";
@@ -29,7 +26,10 @@ in
   	};
 
   services.xserver.enable = true;
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = [
+    "modesettings"
+    "nvidia"
+  ];
 
   hardware.nvidia = {
     # Modesetting is required.
@@ -65,11 +65,23 @@ in
   };
 
   hardware.nvidia.prime = {
+    # offload = {
+    #   enable = lib.mkOverride 990 true;
+    #   enableOffloadCmd = lib.mkIf config.hardware.nvidia.prime.offload.enable true;
+    # };
     sync.enable = true;
 
 		# Make sure to use the correct Bus ID values for your system!
 		intelBusId = "PCI:0:2:0";
 		nvidiaBusId = "PCI:1:0:0";
     # amdgpuBusId = "PCI:54:0:0"; For AMD GPU
+	};
+
+	environment.sessionVariables = {
+	  QT_QPA_PLATFORMTHEME = "wayland;xcb";
+	  GBM_BACKEND = "nvidia-drm";
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    LIBVA_DRIVER_NAME = "nvidia";
+    ENABLE_VKBASALT = "1";
 	};
 }
