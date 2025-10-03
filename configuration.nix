@@ -17,6 +17,7 @@
       # configured using home-manager
       ./user/pkgs/files.nix
       ./user/pkgs/suwayomi.nix
+      ./user/pkgs/localsend.nix
     ];
 
   # Bootloader.
@@ -44,7 +45,7 @@
 
   # Enable the GNOME Desktop Environment.
   # programs.hyprland.xwayland.enable = true;
-  # services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {

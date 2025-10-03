@@ -5,7 +5,6 @@
     ffmpeg
     speedtest-rs
     suwayomi-server
-    localsend
 
     # Nix lsp
     nil
@@ -15,5 +14,9 @@
     fastfetch
     inkscape
     linux-wifi-hotspot
+    kicad
+
+    usbutils
+    android-tools
   ];
 }

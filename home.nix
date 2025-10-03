@@ -19,7 +19,6 @@
     ./user/lang/rust/rust.nix
 
     ./user/pkgs/obsidian.nix
-    ./user/pkgs/kicad.nix
     ./user/pkgs/keepass.nix
     ./user/pkgs/pdf.nix
     ./user/pkgs/torrent.nix

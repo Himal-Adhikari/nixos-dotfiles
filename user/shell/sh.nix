@@ -71,5 +71,8 @@ in
     neofetch
     fzf
   ];
-  
+
+  home.sessionVariables = {
+    EDITOR = "hx";
+  };
 }
