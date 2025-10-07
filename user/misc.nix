@@ -15,6 +15,7 @@
     inkscape
     linux-wifi-hotspot
     kicad
+    vscode
 
     usbutils
     android-tools
