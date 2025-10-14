@@ -4,7 +4,6 @@
   inputs = {
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-kicad.url = "github:nixos/nixpkgs/69ee1d82f1fa4c70a3dc9a64111e7eef3b8e4527";
 
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -19,7 +18,6 @@
     self,
     nixpkgs,
     nixpkgs-stable,
-    nixpkgs-kicad,
     home-manager,
     ...
   } @ inputs: let
@@ -28,15 +26,12 @@
     stable = import nixpkgs-stable {
       inherit system;
     };
-    kicad-nix = import nixpkgs-kicad {
-      inherit system;
-    };
     pkgs = nixpkgs.legacyPackages.${system};
   in {
      nixosConfigurations = {
       himal = nixpkgs.lib.nixosSystem {
         specialArgs = {
-          inherit stable kicad-nix inputs outputs;
+          inherit stable inputs outputs;
         };
         modules = [
           ./configuration.nix
@@ -48,7 +43,7 @@
       himal = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = {
-          inherit stable kicad-nix outputs;
+          inherit stable outputs;
         };
         modules = [
           ./home.nix
