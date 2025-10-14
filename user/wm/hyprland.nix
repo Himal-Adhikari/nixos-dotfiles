@@ -15,6 +15,7 @@
     networkmanagerapplet
     brightnessctl
     hyprls
+    hyprpicker
   ];
 
   imports = [

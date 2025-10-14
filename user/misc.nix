@@ -19,5 +19,7 @@
 
     usbutils
     android-tools
+    sqlitebrowser
+    newsflash
   ];
 }
