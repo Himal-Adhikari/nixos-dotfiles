@@ -44,7 +44,7 @@
           esc = [ "collapse_selection" "keep_primary_selection" ];
           A-l = [ ":toggle lsp.display-inlay-hints" ];
           J = [ "extend_to_line_bounds" "delete_selection" "paste_after" ];
-          K = [ "extend_to_line_bounds" "delete_selection" "move_line_up" "paste_after" ];
+          K = [ "extend_to_line_bounds" "delete_selection" "move_line_up" "paste_before" ];
         };
       };
     };

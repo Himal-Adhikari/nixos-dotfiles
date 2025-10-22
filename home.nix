@@ -9,28 +9,30 @@
   programs.home-manager.enable = true;
 
   imports = [
-    ./user/wm/hyprland.nix
-    ./user/shell/sh.nix
+    ./config/wm/hyprland.nix
 
-    ./user/lang/stm32/stm32.nix
-    ./user/lang/c_cpp/c_cpp.nix
-    ./user/lang/rust/rust.nix
+    ./config/shell/sh.nix
 
-    ./user/pkgs/obsidian.nix
-    ./user/pkgs/keepass.nix
-    ./user/pkgs/pdf.nix
-    ./user/pkgs/torrent.nix
-    ./user/pkgs/helix.nix
+    ./config/style/style.nix
 
-    ./user/style/style.nix
+    ./config/misc.nix
 
-    ./user/misc.nix
+    ./config/lang/stm32/stm32.nix
+    ./config/lang/c_cpp/c_cpp.nix
+    ./config/lang/rust/rust.nix
 
-    ./user/app/lutris/lutris.nix
-    ./user/app/terminal/terminal.nix
-    ./user/app/video/video.nix
-    ./user/app/image/image.nix
-    ./user/app/browser/browser.nix
+    ./config/pkgs/obsidian.nix
+    ./config/pkgs/keepass.nix
+    ./config/pkgs/pdf.nix
+    ./config/pkgs/torrent.nix
+    ./config/pkgs/helix.nix
+
+    ./config/app/lutris/lutris.nix
+    ./config/app/terminal/terminal.nix
+    ./config/app/video/video.nix
+    ./config/app/image/image.nix
+    ./config/app/browser/browser.nix
+
   ];
 
   home.file = {

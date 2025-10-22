@@ -4,7 +4,6 @@
     pavucontrol
     ffmpeg
     speedtest-rs
-    suwayomi-server
 
     # Nix lsp
     nil

@@ -7,14 +7,14 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./system/hardware-configuration.nix
-      ./system/hardware/nvidia-drivers.nix
-      ./system/hardware/intel-drivers.nix
-      ./system/fonts.nix
-      ./system/login.nix
+      ./config/hardware-configuration.nix
+      ./config/hardware/nvidia-drivers.nix
+      ./config/hardware/intel-drivers.nix
+      ./config/fonts.nix
+      ./config/login.nix
 
-      ./user/pkgs/files.nix
-      ./user/pkgs/localsend.nix
+      ./config/pkgs/files.nix
+      ./config/pkgs/localsend.nix
     ];
 
   # Bootloader.
