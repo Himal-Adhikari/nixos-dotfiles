@@ -18,8 +18,11 @@
     vscode
 
     usbutils
+    universal-android-debloater
     android-tools
     sqlitebrowser
     newsflash
+    gimp
+    picard
   ];
 }

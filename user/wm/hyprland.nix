@@ -8,19 +8,21 @@
     hyprpolkitagent
     dunst
     udiskie
-    wl-clip-persist
-    nwg-look
     wl-clipboard
-    wofi
     networkmanagerapplet
     brightnessctl
     hyprls
     hyprpicker
   ];
 
+  services.cliphist = {
+    enable = true;
+  };
+
   imports = [
     ./waybar.nix
     ./wlogout.nix
+    ./wofi.nix
   ];
 
   wayland.windowManager.hyprland = {
@@ -39,7 +41,6 @@ $browser = librewolf
 exec-once = systemctl --user start hyprpolkitagent
 exec-once = udiskie
 exec-once = hyprpaper
-exec-once = wl-clip-persist --clipboard regular
 exec-once = nm-applet
 exec-once = waybar
 
@@ -160,9 +161,7 @@ input {
     }
 }
 
-gestures {
-    # workspace_swipe = true
-}
+gesture = 3, horizontal, workspace
 
 device {
     name = epic-mouse-v1
@@ -179,6 +178,7 @@ bind = $mainMod, T, exec, $fileManager
 bind = $mainMod, Space, togglefloating,
 bind = $mainMod, R, exec, $menu
 bind = $mainMod, escape, exec, wlogout --protocol layer-shell
+bind = $mainMod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy
 
 bind = $mainMod, H, movefocus, l
 bind = $mainMod, L, movefocus, r
