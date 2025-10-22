@@ -8,8 +8,6 @@
 
   programs.home-manager.enable = true;
 
-  nixpkgs.config.allowUnfree = true;
-
   imports = [
     ./user/wm/hyprland.nix
     ./user/shell/sh.nix
