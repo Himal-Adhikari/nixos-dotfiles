@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     evince
   ];
+
   xdg.mimeApps = {
     enable = true;
     associations.added = {

@@ -26,6 +26,8 @@
     ./config/pkgs/pdf.nix
     ./config/pkgs/torrent.nix
     ./config/pkgs/helix.nix
+    ./config/pkgs/office.nix
+    ./config/pkgs/freecad.nix
 
     ./config/app/lutris/lutris.nix
     ./config/app/terminal/terminal.nix

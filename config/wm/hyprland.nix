@@ -138,6 +138,7 @@ master {
 
 misc {
     vfr = true
+    enable_anr_dialog = false
     force_default_wallpaper = 0 # Set to 0 or 1 to disable the anime mascot wallpapers
     disable_hyprland_logo = false # If true disables the random hyprland logo / anime girl background. :(
 }
@@ -179,6 +180,7 @@ bind = $mainMod, Space, togglefloating,
 bind = $mainMod, R, exec, $menu
 bind = $mainMod, escape, exec, wlogout --protocol layer-shell
 bind = $mainMod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy
+bind = $mainMod, F, fullscreen
 
 bind = $mainMod, H, movefocus, l
 bind = $mainMod, L, movefocus, r
