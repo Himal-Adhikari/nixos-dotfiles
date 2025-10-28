@@ -1,9 +1,5 @@
 {pkgs, ...}:
 {
-  environment.systemPackages = with pkgs; [
-    file-roller
-  ];
-
   programs.thunar = {
     enable = true;
     plugins = with pkgs.xfce; [
