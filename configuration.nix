@@ -15,6 +15,8 @@
 
       ./config/pkgs/files.nix
       ./config/pkgs/localsend.nix
+
+      ./config/appimage.nix
     ];
 
   # Bootloader.

@@ -11,17 +11,18 @@
     dpkg
     patchelf
     fastfetch
+
     inkscape
-    linux-wifi-hotspot
     kicad
     vscode
+    gimp
+    newsflash
+    picard
+    cheese
 
     usbutils
     universal-android-debloater
     android-tools
     sqlitebrowser
-    newsflash
-    gimp
-    picard
   ];
 }

@@ -9,6 +9,9 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-index-database.url = "github:nix-community/nix-index-database";
+    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -16,6 +19,7 @@
     nixpkgs,
     nixpkgs-stable,
     home-manager,
+    nix-index-database,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -32,6 +36,7 @@
         };
         modules = [
           ./configuration.nix
+          nix-index-database.nixosModules.nix-index
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

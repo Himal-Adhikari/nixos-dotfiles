@@ -27,7 +27,6 @@ stdenv.mkDerivation {
     runHook preInstall
 
     mkdir -p $out
-    ls -la $src
     unzip $src -d "${pkg_name}"
     dpkg-deb --fsys-tarfile "${pkg_name}/stm32cubemonitor_${version}_amd64.deb" | \
     tar -x --no-same-owner
