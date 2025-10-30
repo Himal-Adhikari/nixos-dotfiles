@@ -12,6 +12,7 @@
 
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
+    eden.url = "github:grantimatter/eden-flake";
   };
 
   outputs = {
@@ -19,7 +20,6 @@
     nixpkgs,
     nixpkgs-stable,
     home-manager,
-    nix-index-database,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -27,7 +27,6 @@
     stable = import nixpkgs-stable {
       inherit system;
     };
-    # pkgs = nixpkgs.legacyPackages.${system};
   in {
      nixosConfigurations = {
       himal = nixpkgs.lib.nixosSystem {
@@ -36,28 +35,19 @@
         };
         modules = [
           ./configuration.nix
-          nix-index-database.nixosModules.nix-index
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.himal = ./home.nix;
+
+            home-manager.users.himal.imports = [
+              ./home.nix
+              inputs.eden.homeModules.default
+              inputs.nix-index-database.homeModules.nix-index
+            ];
           }
         ];
       };
     };
-
-    # homeConfigurations = {
-    #   himal = home-manager.lib.homeManagerConfiguration {
-    #     inherit pkgs;
-    #     extraSpecialArgs = {
-    #       inherit stable outputs;
-    #     };
-    #     modules = [
-    #       ./home.nix
-    #       inputs.nix-index-database.homeModules.nix-index
-    #     ];
-    #   };
-    # };
   };
 }

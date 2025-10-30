@@ -1,6 +1,6 @@
-{ pkgs, ... }:
+{ ... }:
 {
-  home.packages = with pkgs;[
-    ryubing
-  ];
+  programs.eden = {
+    enable = true;
+  };
 }
