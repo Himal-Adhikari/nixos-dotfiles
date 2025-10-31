@@ -17,6 +17,7 @@
       ./config/pkgs/localsend.nix
 
       ./config/appimage.nix
+      ./config/gaming/gamemode.nix
     ];
 
   # Bootloader.

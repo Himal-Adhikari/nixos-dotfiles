@@ -12,6 +12,7 @@
   };
   home.packages = with pkgs; [
     brave
+    chromium
   ];
 
   xdg.mimeApps = {
