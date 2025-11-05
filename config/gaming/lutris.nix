@@ -1,5 +1,8 @@
 {pkgs, ...}:
 {
+  home.packages = with pkgs; [
+    mangohud
+  ];
   programs.lutris = {
     enable = true;
 

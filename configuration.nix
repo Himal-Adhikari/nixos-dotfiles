@@ -18,6 +18,8 @@
 
       ./config/appimage.nix
       ./config/gaming/gamemode.nix
+
+      ./config/udev_rules/controller.nix
     ];
 
   # Bootloader.

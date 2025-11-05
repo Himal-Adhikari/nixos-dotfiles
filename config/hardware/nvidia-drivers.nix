@@ -6,7 +6,7 @@ with lib;
   	enable32Bit = true;
 	  extraPackages = with pkgs; [
       rocmPackages.clr
-	    vaapiVdpau
+      libva-vdpau-driver
   	  libvdpau
   	  libvdpau-va-gl 
   	  nvidia-vaapi-driver

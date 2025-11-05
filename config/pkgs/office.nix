@@ -1,6 +1,6 @@
-{pkgs, ...}:
+{ ... }:
 {
-  home.packages = with pkgs; [
-    onlyoffice-bin
-  ];
+  programs.onlyoffice = {
+    enable = true;
+  };
 }
