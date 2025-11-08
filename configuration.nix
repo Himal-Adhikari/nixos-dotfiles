@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports =
@@ -10,6 +10,8 @@
       ./config/hardware-configuration.nix
       ./config/hardware/nvidia-drivers.nix
       ./config/hardware/intel-drivers.nix
+      ./config/hardware/laptop.nix
+
       ./config/fonts.nix
       ./config/login.nix
 
