@@ -1,7 +1,7 @@
 { ... }:
 {
   imports = [
-   ./switch.nix
+   # ./switch.nix
    ./lutris.nix 
    ./wii_u.nix
   ]; 
