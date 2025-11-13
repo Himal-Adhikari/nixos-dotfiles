@@ -1,9 +1,8 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 
 {
   home.packages = with pkgs; [
     glib
-    dconf 
     adwaita-icon-theme
   ];
   
@@ -16,10 +15,10 @@
   xdg.configFile = {
     "Kvantum/kvantum.kvconfig".text = ''
        [General]
-       theme=MateriaDark
+       theme=catppuccin-frappe-blue
      '';
 
-     "Kvantum/Materia".source = "${pkgs.materia-kde-theme}/share/Kvantum/Materia";
+     "Kvantum/catppuccin-frappe-blue".source = "${pkgs.catppuccin-kvantum}/share/Kvantum/catppuccin-frappe-blue";
   };
 
   gtk = {
