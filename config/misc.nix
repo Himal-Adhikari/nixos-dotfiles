@@ -19,6 +19,7 @@
     newsflash
     picard
     cheese
+    logseq
 
     usbutils
     universal-android-debloater

@@ -74,7 +74,7 @@ general {
 }
 
 decoration {
-    rounding = 5
+    rounding = 0
     rounding_power = 2
 
     # Change transparency of focused and unfocused windows
@@ -143,6 +143,10 @@ misc {
     disable_hyprland_logo = false # If true disables the random hyprland logo / anime girl background. :(
 }
 
+ecosystem {
+  no_update_news = true
+  no_donation_nag = true
+}
 
 input {
     kb_layout = us
