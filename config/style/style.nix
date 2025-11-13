@@ -1,9 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   home.packages = with pkgs; [
     glib
     dconf 
+    adwaita-icon-theme
   ];
   
   qt = {
@@ -23,20 +24,15 @@
 
   gtk = {
     enable = true;
+    colorScheme = "dark";
     theme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome-themes-extra;
+      name = "catppuccin-frappe-blue-standard";
+      package = pkgs.catppuccin-gtk;
     };
-    iconTheme = {
-      name = "Adwaita";
-      package = pkgs.adwaita-icon-theme;
-    };
-  };
 
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      "color-scheme" = "prefer-dark";
-      "gtk-theme" = "Adwaita-dark";
+    gtk4.theme = {
+      name = "catppuccin-frappe-blue-standard";
+      package = pkgs.catppuccin-gtk;
     };
   };
 }

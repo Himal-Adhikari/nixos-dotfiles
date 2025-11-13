@@ -8,6 +8,10 @@
       thunar-volman
     ];
   };
+  
+  environment.systemPackages = with pkgs; [
+    nautilus
+  ];
 
   programs.xfconf.enable = true;
   services.gvfs.enable = true;

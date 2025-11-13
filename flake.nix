@@ -12,7 +12,6 @@
 
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
-    eden.url = "github:grantimatter/eden-flake";
   };
 
   outputs = {
@@ -34,7 +33,7 @@
           inherit stable inputs outputs;
         };
         modules = [
-          ./configuration.nix
+                ./configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -42,7 +41,6 @@
 
             home-manager.users.himal.imports = [
               ./home.nix
-              inputs.eden.homeModules.default
               inputs.nix-index-database.homeModules.nix-index
             ];
           }

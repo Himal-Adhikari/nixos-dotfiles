@@ -19,7 +19,8 @@
 
     ./config/gaming/gaming.nix
 
-    ./config/lang/stm32/stm32.nix
+    ./config/lang/embeeded.nix
+
     ./config/lang/c_cpp/c_cpp.nix
     ./config/lang/rust/rust.nix
 
