@@ -34,8 +34,9 @@
 monitor=,preferred,auto,1
 
 $terminal = kitty
-$fileManager = thunar
+$fileManager = nautilus
 $menu = wofi --show drun --allow-images
+$executable_menu = wofi --show run
 $browser = librewolf
 
 exec-once = systemctl --user start hyprpolkitagent
@@ -182,6 +183,7 @@ bind = $mainMod, Q, killactive,
 bind = $mainMod, T, exec, $fileManager
 bind = $mainMod, Space, togglefloating,
 bind = $mainMod, R, exec, $menu
+bind = $mainMod SHIFT, R, exec, $executable_menu
 bind = $mainMod, escape, exec, wlogout --protocol layer-shell
 bind = $mainMod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy
 bind = $mainMod, F, fullscreen

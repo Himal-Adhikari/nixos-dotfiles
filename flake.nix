@@ -25,6 +25,7 @@
     system = "x86_64-linux";
     stable = import nixpkgs-stable {
       inherit system;
+      config.allowUnfree = true;
     };
   in {
      nixosConfigurations = {
@@ -33,12 +34,14 @@
           inherit stable inputs outputs;
         };
         modules = [
-                ./configuration.nix
+          ./configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-
+            home-manager.extraSpecialArgs = {
+              inherit stable inputs outputs;
+            };
             home-manager.users.himal.imports = [
               ./home.nix
               inputs.nix-index-database.homeModules.nix-index

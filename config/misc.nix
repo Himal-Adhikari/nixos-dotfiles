@@ -16,10 +16,10 @@
     kicad
     vscode
     gimp
-    newsflash
     picard
     cheese
     logseq
+    fluent-reader
 
     usbutils
     universal-android-debloater
