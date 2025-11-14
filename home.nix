@@ -23,20 +23,9 @@
 
     ./config/lang/c_cpp/c_cpp.nix
     ./config/lang/rust/rust.nix
+    ./config/lang/python/python.nix
 
-    ./config/pkgs/obsidian.nix
-    ./config/pkgs/keepass.nix
-    ./config/pkgs/pdf.nix
-    ./config/pkgs/torrent.nix
-    ./config/pkgs/helix.nix
-    ./config/pkgs/office.nix
-    ./config/pkgs/freecad.nix
-
-    ./config/app/terminal/terminal.nix
-    ./config/app/video/video.nix
-    ./config/app/image/image.nix
-    ./config/app/browser/browser.nix
-    ./config/app/iso/iso.nix
+    ./config/app/apps.nix
   ];
 
   home.file = {

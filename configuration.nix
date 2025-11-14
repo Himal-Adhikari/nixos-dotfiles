@@ -15,11 +15,14 @@
       ./config/fonts.nix
       ./config/login.nix
 
-      ./config/pkgs/files.nix
-      ./config/pkgs/localsend.nix
+      ./config/shell/nix-ld.nix
 
       ./config/appimage.nix
       ./config/gaming/gamemode.nix
+
+      ./config/app/suwayomi.nix
+      ./config/app/files.nix
+      ./config/app/localsend.nix
 
       ./config/udev_rules/controller.nix
     ];
@@ -76,11 +79,6 @@
   services.blueman.enable = true;
 
   programs.hyprland.enable = true;
-
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    
-  ];
 
   xdg.portal = {
     enable = true;

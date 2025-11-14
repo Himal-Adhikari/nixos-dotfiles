@@ -5,6 +5,7 @@ diff_exists=$(git diff flake.lock | wc -l)
 
 if [ "$diff_exists" -ne 0 ]; then
   nix-prefetch-url --type sha256 file:///home/himal/Downloads/stm32cubemon-lin-v-1-11-0.zip &>/dev/null
+  nix-prefetch-url --type sha256 file:///home/himal/Downloads/stm32cubeprg-lin-v2-20-0.zip &>/dev/null
 fi
  
 sudo nixos-rebuild switch --flake . &>nixos-switch.log || (
