@@ -1,6 +1,6 @@
-{pkgs, stable, ...}:
+{pkgs, ...}:
 {
   home.packages = [
-    stable.obsidian
+    pkgs.obsidian
   ];
 }

@@ -19,11 +19,7 @@
 
     ./config/gaming/gaming.nix
 
-    ./config/lang/embeeded.nix
-
-    ./config/lang/c_cpp/c_cpp.nix
-    ./config/lang/rust/rust.nix
-    ./config/lang/python/python.nix
+    ./config/lang/languages.nix
 
     ./config/app/apps.nix
   ];
