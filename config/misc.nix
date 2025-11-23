@@ -18,8 +18,9 @@
     gimp
     picard
     cheese
-    logseq
     fluent-reader
+    suwayomi-server
+    linux-wifi-hotspot
 
     usbutils
     universal-android-debloater

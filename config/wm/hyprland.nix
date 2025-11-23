@@ -13,6 +13,7 @@
     brightnessctl
     hyprls
     hyprpicker
+    hyprsunset
   ];
 
   services.cliphist = {

@@ -20,7 +20,6 @@
       ./config/appimage.nix
       ./config/gaming/gamemode.nix
 
-      ./config/app/suwayomi.nix
       ./config/app/files.nix
       ./config/app/localsend.nix
 

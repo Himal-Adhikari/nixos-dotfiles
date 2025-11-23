@@ -2,8 +2,8 @@
 let
 connect-package = pkgs.callPackage ./connect_script.nix { };
 myAliases = {
-  ls = "eza --icons";
-  ll = "eza -la --icons";
+  ls = "eza --icons auto";
+  ll = "eza -la --icons auto";
   cd = "z";
   grep = "rg";
   cat = "bat";
@@ -14,6 +14,7 @@ in
   imports = [
     ./tmux.nix
     ./btop.nix
+    ./yazi.nix
   ];
   
   programs.zsh = {

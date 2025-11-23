@@ -13,5 +13,6 @@
     ./helix.nix
     ./office.nix
     ./freecad.nix
+    ./freetube.nix
   ];
 }
