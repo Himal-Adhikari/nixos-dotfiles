@@ -12,8 +12,8 @@
         }
         {
           time = "21:45";
-          temperature = 6000;
-          gamma = 0.8;
+          temperature = 4500;
+          gamma = 0.7;
         }
       ];
     };
