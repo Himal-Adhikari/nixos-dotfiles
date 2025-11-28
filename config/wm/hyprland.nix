@@ -13,7 +13,6 @@
     brightnessctl
     hyprls
     hyprpicker
-    hyprsunset
   ];
 
   services.cliphist = {
@@ -24,6 +23,7 @@
     ./waybar.nix
     ./wlogout.nix
     ./wofi.nix
+    ./hyprsunset.nix
   ];
 
   wayland.windowManager.hyprland = {

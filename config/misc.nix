@@ -20,7 +20,7 @@
     cheese
     fluent-reader
     suwayomi-server
-    linux-wifi-hotspot
+    gnome-calculator
 
     usbutils
     universal-android-debloater

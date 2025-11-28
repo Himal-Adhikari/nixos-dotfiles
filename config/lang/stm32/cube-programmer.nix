@@ -1,7 +1,7 @@
 { lib, stdenv, requireFile, unzip, autoPatchelfHook, jdk17, writeTextFile, buildFHSEnv, libusb1, glib, libz, libkrb5 }:
 
 let
-  version = "2.20.0";
+  version = "2.21.0";
   fileVerStr = builtins.replaceStrings [ "." ] [ "-" ] version;
 in
 stdenv.mkDerivation {
@@ -23,7 +23,7 @@ stdenv.mkDerivation {
 
         nix-prefetch-url --type sha256 file:///path/to/${name}
     '';
-    sha256 = "07j0y7r4kw44p82zrq5ka84znv7bzl931al798xjriy0a29nmqjz";
+    sha256 = "1wksd4cajq14jvxmh3cpkr2vvyxb7icnxh4ws7vnabrvg535rqw5";
   };
 
   nativeBuildInputs = [ unzip autoPatchelfHook ];

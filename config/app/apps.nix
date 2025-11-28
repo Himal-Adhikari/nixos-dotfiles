@@ -8,7 +8,7 @@
     ./iso.nix
     ./obsidian.nix
     ./keepass.nix
-    ./pdf-viewer.nix
+    ./pdf-viewer-home-manager.nix
     ./torrent.nix
     ./helix.nix
     ./office.nix

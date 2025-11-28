@@ -5,5 +5,6 @@
     gnumake
     gcc
     libclang
+    bear
   ];
 }
