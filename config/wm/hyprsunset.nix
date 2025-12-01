@@ -11,7 +11,7 @@
           identity = true;
         }
         {
-          time = "22:00";
+          time = "21:30";
           temperature = 4500;
           gamma = 0.7;
         }

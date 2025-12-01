@@ -14,7 +14,7 @@ in
   imports = [
     ./tmux.nix
     ./btop.nix
-    ./yazi.nix
+    ./yazi/yazi.nix
   ];
   
   programs.zsh = {
