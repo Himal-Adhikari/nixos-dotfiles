@@ -19,7 +19,6 @@
     picard
     cheese
     fluent-reader
-    suwayomi-server
     gnome-calculator
 
     usbutils
