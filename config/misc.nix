@@ -20,6 +20,7 @@
     cheese
     fluent-reader
     gnome-calculator
+    calibre
 
     usbutils
     universal-android-debloater
