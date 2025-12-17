@@ -54,7 +54,8 @@
       "",
       "",
       ""
-    ]
+    ],
+    "on-click": "hyprctl hyprsunset identity"
   },
   "battery": {
     "interval": 30,

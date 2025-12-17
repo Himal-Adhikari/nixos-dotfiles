@@ -11,6 +11,7 @@
     dpkg
     patchelf
     fastfetch
+    p7zip
 
     inkscape
     kicad
@@ -18,9 +19,9 @@
     gimp
     picard
     cheese
-    fluent-reader
     gnome-calculator
     calibre
+    octaveFull
 
     usbutils
     universal-android-debloater
