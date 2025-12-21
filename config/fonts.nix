@@ -9,6 +9,7 @@
       jetbrains-mono
       material-icons
       adwaita-icon-theme
+      fontconfig
     ];
     fontconfig.useEmbeddedBitmaps = true;
   };
