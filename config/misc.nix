@@ -22,6 +22,7 @@
     gnome-calculator
     calibre
     octaveFull
+    rerun
 
     usbutils
     universal-android-debloater
