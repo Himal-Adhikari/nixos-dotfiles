@@ -15,6 +15,7 @@
       taplo
       texlab
       yaml-language-server
+      nil
     ];
 
     settings = {

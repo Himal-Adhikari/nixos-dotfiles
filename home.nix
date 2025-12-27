@@ -11,6 +11,8 @@
   imports = [
     ./config/wm/hyprland.nix
 
+    ./config/system_utils.nix
+
     ./config/shell/sh.nix
 
     ./config/style/style.nix

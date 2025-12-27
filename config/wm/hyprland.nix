@@ -249,8 +249,8 @@ bindl = , XF86AudioPrev, exec, playerctl previous
   services.hyprpaper = {
     enable = true;
     settings = {
-      preload = [ "/home/himal/Pictures/Wallpapers/berserk-brand.png" ];
-      wallpaper = ", /home/himal/Pictures/Wallpapers/berserk-brand.png";
+      preload = [ "/home/himal/Pictures/Wallpapers/my-neighbor-totoro-sunflowers.png" ];
+      wallpaper = ", /home/himal/Pictures/Wallpapers/my-neighbor-totoro-sunflowers.png";
     };
   };
 
