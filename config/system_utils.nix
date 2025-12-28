@@ -9,5 +9,6 @@
     p7zip
     popsicle
     usbutils
+    speedtest-rs
   ];
 }
