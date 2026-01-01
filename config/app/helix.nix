@@ -4,16 +4,13 @@
     enable = true;
 
     extraPackages = with pkgs; [
-      rust-analyzer
       marksman
       bash-language-server
-      libclang
       neocmakelsp
       vscode-langservers-extracted
       typescript-language-server
       ty
       taplo
-      texlab
       yaml-language-server
       nil
     ];
@@ -51,10 +48,15 @@
     };
 
     languages = {
-      language = [{
-       name = "rust";
-       auto-format = true;
-      }];
+      language = [
+        {
+           name = "rust";
+           auto-format = true;
+        }
+      ];
+      language-server.texlab.config.texlab.build = {
+        onSave = true;
+      };
     };
   };
 }

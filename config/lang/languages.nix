@@ -9,6 +9,7 @@
     ./octave.nix
     ./rerun.nix
     ./sqlite.nix
+    ./latex.nix
   ];
 
   programs.direnv = {
