@@ -1,6 +1,9 @@
 { pkgs, ... }:
 {
-  home.packages = [
-    pkgs.octaveFull
+  home.packages = with pkgs; [
+    (octaveFull.withPackages (opkgs: with opkgs; [
+      control
+      symbolic
+    ]))
   ];
 }

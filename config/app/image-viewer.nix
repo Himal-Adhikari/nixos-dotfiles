@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     loupe
+    imagemagick
   ];
 
   xdg.mimeApps = {

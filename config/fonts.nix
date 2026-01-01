@@ -11,6 +11,11 @@
       adwaita-icon-theme
       fontconfig
     ];
-    fontconfig.useEmbeddedBitmaps = true;
+    fontconfig = {
+      useEmbeddedBitmaps = true;
+      antialias = true;
+      hinting.enable = true;
+      subpixel.rgba = "rgb";
+    };
   };
 }
