@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   xdg.mimeApps = {
     enable = true;
@@ -9,4 +9,8 @@
       "application/pdf" = "org.gnome.Evince.desktop";
     };
   };
+
+  home.packages = [
+    pkgs.kdePackages.okular
+  ];
 }

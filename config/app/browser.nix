@@ -11,6 +11,7 @@
   };
   home.packages = with pkgs; [
     brave
+    firefox
   ];
 
   xdg.mimeApps = {
