@@ -7,8 +7,10 @@
     patchelf
     fastfetch
     p7zip
-    popsicle
     usbutils
     speedtest-rs
+
+    popsicle
+    gnome-disk-utility
   ];
 }
