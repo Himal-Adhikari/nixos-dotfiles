@@ -13,6 +13,7 @@
     brightnessctl
     hyprls
     hyprpicker
+    swaybg
   ];
 
   services.cliphist = {
@@ -45,6 +46,7 @@ exec-once = udiskie
 exec-once = hyprpaper
 exec-once = nm-applet
 exec-once = waybar
+exec-once = swaybg -m fill -i /home/himal/Pictures/Wallpapers/circuit-waifu.png
 
 env = XCURSOR_SIZE,24
 env = HYPRCURSOR_SIZE,24
@@ -246,13 +248,13 @@ bindl = , XF86AudioPrev, exec, playerctl previous
       '';
   };
 
-  services.hyprpaper = {
-    enable = true;
-    settings = {
-      preload = [ "/home/himal/Pictures/Wallpapers/my-neighbor-totoro-sunflowers.png" ];
-      wallpaper = ", /home/himal/Pictures/Wallpapers/my-neighbor-totoro-sunflowers.png";
-    };
-  };
+  # services.hyprpaper = {
+  #   enable = true;
+  #   settings = {
+  #     preload = [ "/home/himal/Pictures/Wallpapers/circuit-waifu.png" ];
+  #     wallpaper = ", /home/himal/Pictures/Wallpapers/circuit-waifu.png";
+  #   };
+  # };
 
   programs.hyprlock = {
     enable = true;  

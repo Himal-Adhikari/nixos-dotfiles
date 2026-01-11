@@ -21,5 +21,6 @@
     ./camera.nix
     ./calculator.nix
     ./ebook-reader.nix
+    ./bottles.nix
   ];
 }

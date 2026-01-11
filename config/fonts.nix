@@ -10,6 +10,7 @@
       material-icons
       adwaita-icon-theme
       fontconfig
+      newcomputermodern
     ];
     fontconfig = {
       useEmbeddedBitmaps = true;
