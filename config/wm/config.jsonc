@@ -55,7 +55,7 @@
       "",
       ""
     ],
-    "on-click": "hyprctl hyprsunset identity"
+    "on-click": "bash -c 'systemctl --user is-active --quiet hyprsunset && systemctl --user stop hyprsunset || systemctl --user start hyprsunset'"
   },
   "battery": {
     "interval": 30,
