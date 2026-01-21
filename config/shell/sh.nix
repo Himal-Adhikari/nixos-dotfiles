@@ -15,6 +15,7 @@ in
     ./tmux.nix
     ./btop.nix
     ./yazi/yazi.nix
+    ./git.nix
   ];
   
   programs.zsh = {
@@ -50,10 +51,6 @@ in
     enable = true;
   };
 
-  programs.git = {
-    enable = true;
-  };
-  
   home.packages = with pkgs; [
     ripgrep
     bat

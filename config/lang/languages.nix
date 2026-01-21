@@ -10,6 +10,7 @@
     ./rerun.nix
     ./sqlite.nix
     ./latex.nix
+    ./typst.nix
   ];
 
   programs.direnv = {
