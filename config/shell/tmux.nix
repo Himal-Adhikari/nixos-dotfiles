@@ -1,4 +1,4 @@
-{pkgs, config, ...}:
+{pkgs, ...}:
 {
   programs.tmux = {
     enable = true;
@@ -21,8 +21,8 @@
 
     unbind '"'
     unbind %
-    bind d split-window -v
-    bind s split-window -h
+    bind d split-window -v "#{pane_current_path}"
+    bind s split-window -h "#{pane_current_path}"
 
     bind f resize-pane -Z
 
