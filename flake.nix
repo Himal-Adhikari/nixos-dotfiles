@@ -2,11 +2,11 @@
   description = "Nixos config flake";
 
   inputs = {
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/master";
+      url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -17,13 +17,13 @@
   outputs = {
     self,
     nixpkgs,
-    nixpkgs-stable,
+    nixpkgs-unstable,
     home-manager,
     ...
   } @ inputs: let
     inherit (self) outputs;
     system = "x86_64-linux";
-    stable = import nixpkgs-stable {
+    unstable = import nixpkgs-unstable {
       inherit system;
       config.allowUnfree = true;
     };
@@ -31,7 +31,7 @@
      nixosConfigurations = {
       himal = nixpkgs.lib.nixosSystem {
         specialArgs = {
-          inherit stable inputs outputs;
+          inherit unstable inputs outputs;
         };
         modules = [
           ./configuration.nix
@@ -40,7 +40,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = {
-              inherit stable inputs outputs;
+              inherit unstable inputs outputs;
             };
             home-manager.users.himal.imports = [
               ./home.nix
