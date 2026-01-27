@@ -46,7 +46,7 @@ exec-once = udiskie
 exec-once = hyprpaper
 exec-once = nm-applet
 exec-once = waybar
-exec-once = "swaybg -m fill -i $(\cat ~/.config/hypr/wallpaper-path.txt)"
+exec-once = swaybg -m fill -i $(\cat ~/.config/hypr/wallpaper-path.txt)
 
 env = XCURSOR_SIZE,24
 env = HYPRCURSOR_SIZE,24
