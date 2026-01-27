@@ -27,7 +27,7 @@
     settings = {
       opener.set-wallpaper = [
         {
-          run  = "killall swaybg; swaybg -m fill -i \"$1\"";
+          run  = "echo $1 > ~/.config/hypr/wallpaper-path.txt; killall swaybg; swaybg -m fill -i $1";
           for  = "linux";
           desc = "Set as wallpaper";
           orphan = true;
