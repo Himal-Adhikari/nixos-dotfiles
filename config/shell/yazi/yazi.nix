@@ -1,5 +1,10 @@
 { pkgs, ... }:
 {
+
+  home.packages = with pkgs; [
+    dragon-drop
+  ];
+
   programs.yazi = {
     enable = true;
     shellWrapperName = "y";
@@ -19,12 +24,28 @@
       smart-enter = pkgs.yaziPlugins.smart-enter;
     };
 
+    settings = {
+      opener.set-wallpaper = [
+        {
+          run  = "killall swaybg; swaybg -m fill -i %s1";
+          for  = "linux";
+          desc = "Set as wallpaper";
+          orphan = true;
+        
+        }
+      ];
+    };
+
     keymap = {
       mgr.prepend_keymap = [
         {
           run = "plugin smart-enter";
           on = "l"; 
           desc = "Enter the child directory, or open the file";
+        }
+        {
+          on = "<C-n>";
+          run = "shell 'dragon-drop -x -i -T \"$1\"'";
         }
       ];
     };
