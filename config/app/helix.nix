@@ -24,6 +24,7 @@
         bufferline = "multiple";
         color-modes = true;
         scroll-lines = 5;
+        end-of-line-diagnostics = "hint";
         lsp = {
           display-inlay-hints = true;
           display-signature-help-docs = false;
@@ -34,6 +35,9 @@
         };
         cursor-shape = {
           insert = "bar";
+        };
+        inline-diagnostics = {
+          cursor-line = "error";
         };
       };
 

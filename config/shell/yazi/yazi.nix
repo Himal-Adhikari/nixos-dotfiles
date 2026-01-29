@@ -3,6 +3,7 @@
 
   home.packages = with pkgs; [
     dragon-drop
+    exiftool
   ];
 
   programs.yazi = {
