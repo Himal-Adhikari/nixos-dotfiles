@@ -9,7 +9,7 @@
   programs.yazi = {
     enable = true;
     shellWrapperName = "y";
-    enableZshIntegration = true;
+    enableZshIntegration = false;
 
     flavors = {
       catppuccin_mocha = pkgs.callPackage ./catppuccin-mocha.nix { };
