@@ -1,15 +1,15 @@
 { pkgs, ... }:
 {
-
-  home.packages = with pkgs; [
-    dragon-drop
-    exiftool
-  ];
-
   programs.yazi = {
     enable = true;
+
+    extraPackages = with pkgs; [
+      dragon-drop
+      exiftool
+    ];
+    
     shellWrapperName = "y";
-    enableZshIntegration = false;
+    enableZshIntegration = true;
 
     flavors = {
       catppuccin_mocha = pkgs.callPackage ./catppuccin-mocha.nix { };
@@ -26,19 +26,30 @@
     };
 
     settings = {
+      open.append_rules = [
+        {
+          mime = "image/*";
+          use = "set-wallpaper";
+        }
+        {
+          mime = "application/pdf";
+          use = "okular";
+        }
+      ];
       opener.set-wallpaper = [
         {
           run  = "echo $1 > ~/.config/hypr/wallpaper-path.txt; killall swaybg; swaybg -m fill -i $1";
           for  = "linux";
           desc = "Set as wallpaper";
           orphan = true;
-        
         }
       ];
-      open.prepend_rules = [
+      opener.okular = [
         {
-          mime = "image/*";
-          use = "set-wallpaper";
+          run  = "okular \"$1\"";
+          for  = "linux";
+          desc = "Open with Okular";
+          orphan = true;
         }
       ];
     };
