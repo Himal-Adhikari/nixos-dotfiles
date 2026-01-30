@@ -25,6 +25,7 @@
     ./wlogout.nix
     ./wofi.nix
     ./hyprsunset.nix
+    ./hypridle.nix
   ];
 
   wayland.windowManager.hyprland = {
@@ -46,6 +47,7 @@ exec-once = udiskie
 exec-once = hyprpaper
 exec-once = nm-applet
 exec-once = waybar
+exec-once = hypridle
 exec-once = swaybg -m fill -i $(\cat ~/.config/hypr/wallpaper-path.txt)
 
 env = XCURSOR_SIZE,24
