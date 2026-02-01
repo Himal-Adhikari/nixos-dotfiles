@@ -26,6 +26,9 @@
     };
 
     settings = {
+      mgr = {
+        sort_by = "natural";
+      };
       open.append_rules = [
         {
           mime = "image/*";
