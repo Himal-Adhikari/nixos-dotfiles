@@ -23,5 +23,6 @@
     ./ebook-reader.nix
     # ./bottles.nix
     ./anicli.nix
+    ./linux-wifi-hotspot.nix
   ];
 }
