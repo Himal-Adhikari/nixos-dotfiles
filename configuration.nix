@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 
 {
   imports =
@@ -28,6 +28,7 @@
       ./config/app/files.nix
       ./config/app/localsend.nix
       ./config/app/pdf-viewer.nix
+      ./config/app/suwayomi.nix
       
       ./config/udev_rules/controller.nix
     ];
@@ -80,9 +81,9 @@
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.himal = {
+  users.users.${username} = {
     isNormalUser = true;
-    description = "Himal Adhikari";
+    description = "${username}";
     extraGroups = [ "networkmanager" "wheel" "dialout" ];
     shell = pkgs.zsh;
   };

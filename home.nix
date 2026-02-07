@@ -1,8 +1,8 @@
-{ config, pkgs, ... }:
+{ username, ... }:
 
 {
-  home.username = "himal";
-  home.homeDirectory = "/home/himal";
+  home.username = "${username}";
+  home.homeDirectory = "/home/${username}";
 
   home.stateVersion = "25.05";
 

@@ -32,6 +32,7 @@
       himal = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit unstable inputs outputs;
+          username = "himal";
         };
         modules = [
           ./configuration.nix
@@ -41,6 +42,7 @@
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = {
               inherit unstable inputs outputs;
+              username = "himal";
             };
             home-manager.users.himal.imports = [
               ./home.nix
