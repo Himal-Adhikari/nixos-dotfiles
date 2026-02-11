@@ -72,6 +72,13 @@
           run = "shell 'dragon-drop -x -i -T \"$1\"'";
         }
 
+        # Copy to System Clipboard
+        {
+          on = "y";
+          run = [ "shell -- for f in \"$@\"; do echo \"file://$f\"; done | wl-copy -t text/uri-list" "yank" ];
+          desc = "Copy files to system clipboard";
+        }
+
         # Vim Relative Motions
         {
           on = [ "1" ];
