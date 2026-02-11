@@ -23,6 +23,7 @@
 
     plugins = {
       smart-enter = pkgs.yaziPlugins.smart-enter;
+      relative-motions = pkgs.yaziPlugins.relative-motions;
     };
 
     settings = {
@@ -60,8 +61,8 @@
     keymap = {
       mgr.prepend_keymap = [
         {
-          run = "plugin smart-enter";
           on = "l"; 
+          run = "plugin smart-enter";
           desc = "Enter the child directory, or open the file";
         }
         {
