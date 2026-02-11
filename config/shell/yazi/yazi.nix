@@ -26,6 +26,8 @@
       relative-motions = pkgs.yaziPlugins.relative-motions;
     };
 
+    initLua = "require(\"relative-motions\"):setup({ show_numbers=\"relative\", show_motion = true, enter_mode =\"first\" })";
+
     settings = {
       mgr = {
         sort_by = "natural";
@@ -68,6 +70,53 @@
         {
           on = "<C-n>";
           run = "shell 'dragon-drop -x -i -T \"$1\"'";
+        }
+
+        # Vim Relative Motions
+        {
+          on = [ "1" ];
+          run = "plugin relative-motions 1";
+          desc = "Move in relative steps";
+        }
+        {
+          on = [ "2" ];
+          run = "plugin relative-motions 2";
+          desc = "Move in relative steps";
+        }
+        {
+          on = [ "3" ];
+          run = "plugin relative-motions 3";
+          desc = "Move in relative steps";
+        }
+        {
+          on = [ "4" ];
+          run = "plugin relative-motions 4";
+          desc = "Move in relative steps";
+        }
+        {
+          on = [ "5" ];
+          run = "plugin relative-motions 5";
+          desc = "Move in relative steps";
+        }
+        {
+          on = [ "6" ];
+          run = "plugin relative-motions 6";
+          desc = "Move in relative steps";
+        }
+        {
+          on = [ "7" ];
+          run = "plugin relative-motions 7";
+          desc = "Move in relative steps";
+        }
+        {
+          on = [ "8" ];
+          run = "plugin relative-motions 8";
+          desc = "Move in relative steps";
+        }
+        {
+          on = [ "9" ];
+          run = "plugin relative-motions 9";
+          desc = "Move in relative steps";
         }
       ];
     };
