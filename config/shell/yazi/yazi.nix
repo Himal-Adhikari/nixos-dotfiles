@@ -1,7 +1,15 @@
 { pkgs, ... }:
+  let yazi-override = pkgs.yazi.override {
+      _7zz = pkgs._7zz-rar;
+  };
+in
 {
+
+
   programs.yazi = {
     enable = true;
+
+    package = yazi-override;
 
     extraPackages = with pkgs; [
       dragon-drop
