@@ -5,7 +5,6 @@
 in
 {
 
-
   programs.yazi = {
     enable = true;
 
