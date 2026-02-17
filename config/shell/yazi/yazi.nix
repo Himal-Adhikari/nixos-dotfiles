@@ -13,6 +13,7 @@ in
     extraPackages = with pkgs; [
       dragon-drop
       exiftool
+      mediainfo
     ];
     
     shellWrapperName = "y";

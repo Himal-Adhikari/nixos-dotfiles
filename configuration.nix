@@ -27,7 +27,6 @@
 
       ./config/app/files.nix
       ./config/app/localsend.nix
-      ./config/app/pdf-viewer.nix
       ./config/app/suwayomi.nix
       
       ./config/udev_rules/controller.nix
