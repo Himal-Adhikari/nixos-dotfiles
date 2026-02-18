@@ -24,5 +24,6 @@
     # ./bottles.nix
     ./anicli.nix
     ./linux-wifi-hotspot.nix
+    ./rmpc/rmpc.nix
   ];
 }
