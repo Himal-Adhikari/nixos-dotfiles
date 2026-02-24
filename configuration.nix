@@ -16,6 +16,7 @@
       ./config/hardware/networking.nix
       ./config/hardware/bluetooth.nix
       ./config/hardware/firewall.nix
+      ./config/hardware/printing.nix
 
       ./config/fonts.nix
       ./config/login.nix
