@@ -26,5 +26,6 @@
     ./linux-wifi-hotspot.nix
     # ./rmpc/rmpc.nix
     ./music_player.nix
+    ./neovim/neovim.nix
   ];
 }
