@@ -119,6 +119,9 @@
       xorg.libXft
       libvdpau
 
+      wayland
+      wayland-protocols
+
        # Some more libraries that I needed to run programs
       pango
       cairo
