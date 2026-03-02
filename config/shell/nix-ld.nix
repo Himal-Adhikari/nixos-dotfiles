@@ -47,6 +47,7 @@
       # https://github.com/NixOS/nixpkgs/blob/master/pkgs/by-name/st/steam/package.nix#L36-L85
       networkmanager      
       vulkan-loader
+      vulkan-tools
       libgbm
       libdrm
       libxcrypt
@@ -73,6 +74,7 @@
       ffmpeg
       # Only libraries are needed from those two
       libudev0-shim
+      libudev-zero
 
       # needed to run unity
       gtk3
