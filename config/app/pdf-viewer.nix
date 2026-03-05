@@ -7,11 +7,13 @@
     };
     defaultApplications = {
       "application/pdf" = "org.pwmt.zathura.desktop";
+      "application/epub+zip" = "readest.desktop";
     };
   };
 
-  home.packages = [
-    pkgs.kdePackages.okular
+  home.packages = with pkgs; [
+    kdePackages.okular
+    readest
   ];
 
   programs.zathura = {
