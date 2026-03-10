@@ -60,6 +60,13 @@
       ];
       language-server.texlab.config.texlab.build = {
         onSave = true;
+        args = [ "-pdf" "-interaction=nonstopmode" "-synctex=1" "-outdir-build" "%f"];
+        auxDiretory = "build";
+        outputDirectory = "build";
+      };
+      language-server.texlab.config.texlab.forwardSearch = {
+        executable = "zathura";
+        args = [ "--synctex-forward" "%l:1:%f" "%p"];
       };
     };
   };
