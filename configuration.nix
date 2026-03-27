@@ -31,6 +31,8 @@
       ./config/app/suwayomi.nix
       
       ./config/udev_rules/controller.nix
+
+      ./config/app/docker.nix
     ];
 
   # Set your time zone.
