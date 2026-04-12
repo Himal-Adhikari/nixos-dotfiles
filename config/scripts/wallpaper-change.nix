@@ -5,10 +5,12 @@ let
     #!/usr/bin/env bash
     
     WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
+    CACHE_FILE="$HOME/.config/hypr/wallpaper-path.txt"
     INTERVAL=1800
 
     change_wallpaper() {
-        RANDOM_WP=$(find "$WALLPAPER_DIR" -type f | shuf -n 1)
+        PREV_WP=$(cat "$CACHE_FILE")
+        RANDOM_WP=$(find "$WALLPAPER_DIR" -type f | grep -vF "$PREV_WP" | shuf -n 1)
 
         if [ -n "$RANDOM_WP" ]; then
             swaybg -m fill -i "$RANDOM_WP" &
