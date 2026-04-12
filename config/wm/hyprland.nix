@@ -48,6 +48,7 @@ exec-once = hyprpaper
 exec-once = nm-applet
 exec-once = waybar
 exec-once = hypridle
+exec-once = hypr-wallpaper daemon
 exec-once = swaybg -m fill -i $(\cat ~/.config/hypr/wallpaper-path.txt)
 
 env = XCURSOR_SIZE,24
@@ -192,6 +193,23 @@ bind = $mainMod SHIFT, R, exec, $executable_menu
 bind = $mainMod, escape, exec, wlogout --protocol layer-shell
 bind = $mainMod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy
 bind = $mainMod, F, fullscreen
+bind = $mainMod, W, exec, hypr-wallpaper
+
+# Screenshot a window
+bind = $mainMod, PRINT, exec, hyprshot -m window
+# Screenshot a monitor
+bind = , PRINT, exec, hyprshot -m output
+# Screenshot a region
+bind = SHIFT, PRINT, exec, hyprshot -m region
+
+bind = $mainMod, S, togglespecialworkspace, magic
+bind = $mainMod SHIFT, S, movetoworkspace, special:magic
+
+bind = $mainMod, mouse_down, workspace, e+1
+bind = $mainMod, mouse_up, workspace, e-1
+
+bindm = $mainMod, mouse:272, movewindow
+bindm = $mainMod, mouse:273, resizewindow
 
 bind = $mainMod, H, movefocus, l
 bind = $mainMod, L, movefocus, r
@@ -219,22 +237,6 @@ bind = $mainMod SHIFT, 7, movetoworkspace, 7
 bind = $mainMod SHIFT, 8, movetoworkspace, 8
 bind = $mainMod SHIFT, 9, movetoworkspace, 9
 bind = $mainMod SHIFT, 0, movetoworkspace, 10
-
-bind = $mainMod, S, togglespecialworkspace, magic
-bind = $mainMod SHIFT, S, movetoworkspace, special:magic
-
-bind = $mainMod, mouse_down, workspace, e+1
-bind = $mainMod, mouse_up, workspace, e-1
-
-bindm = $mainMod, mouse:272, movewindow
-bindm = $mainMod, mouse:273, resizewindow
-
-# Screenshot a window
-bind = $mainMod, PRINT, exec, hyprshot -m window
-# Screenshot a monitor
-bind = , PRINT, exec, hyprshot -m output
-# Screenshot a region
-bind = SHIFT, PRINT, exec, hyprshot -m region
 
 bindel = ,XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+
 bindel = ,XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
