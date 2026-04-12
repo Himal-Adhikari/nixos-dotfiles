@@ -50,6 +50,7 @@ exec-once = waybar
 exec-once = hypridle
 exec-once = hypr-wallpaper daemon
 exec-once = swaybg -m fill -i $(\cat ~/.config/hypr/wallpaper-path.txt)
+exec-once = battery-notification
 
 env = XCURSOR_SIZE,24
 env = HYPRCURSOR_SIZE,24
@@ -251,14 +252,6 @@ bindl = , XF86AudioPlay, exec, playerctl play-pause
 bindl = , XF86AudioPrev, exec, playerctl previous
       '';
   };
-
-  # services.hyprpaper = {
-  #   enable = true;
-  #   settings = {
-  #     preload = [ "/home/himal/Pictures/Wallpapers/circuit-waifu.png" ];
-  #     wallpaper = ", /home/himal/Pictures/Wallpapers/circuit-waifu.png";
-  #   };
-  # };
 
   programs.hyprlock = {
     enable = true;  
