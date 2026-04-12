@@ -12,6 +12,11 @@ let
         PREV_WP=$(cat "$CACHE_FILE")
         RANDOM_WP=$(find "$WALLPAPER_DIR" -type f | grep -vF "$PREV_WP" | shuf -n 1)
 
+        if [ -z "$RANDOM_WP" ]; then
+          # In case only one wallpaper in the folder
+          RANDOM_WP=$(find "$WALLPAPER_DIR" -type f | shuf -n 1)
+        fi
+
         if [ -n "$RANDOM_WP" ]; then
             swaybg -m fill -i "$RANDOM_WP" &
             NEW_PID=$!
