@@ -15,10 +15,10 @@ let
         STATUS=$(cat "/sys/class/power_supply/$BAT/status")
 
         if [ "$STATUS" = "Discharging" ]; then
-          if [ "$CAPACITY" -le 20 ] && [ "$critical_sent" = false ]; then
+          if [ "$CAPACITY" -le 30 ] && [ "$critical_sent" = false ]; then
             notify-send -u critical "Battery Critical" "Level: $CAPACITY%"
             critical_sent=true
-          elif [ "$CAPACITY" -le 95 ] && [ "$low_sent" = false ]; then
+          elif [ "$CAPACITY" -le 60 ] && [ "$low_sent" = false ]; then
             notify-send -u normal "Battery Low" "Level: $CAPACITY%"
             low_sent=true
           fi
