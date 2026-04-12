@@ -1,6 +1,5 @@
 {pkgs, config, ...}:
 let
-connect-package = pkgs.callPackage ./connect_script.nix { };
 myAliases = {
   ls = "eza --icons auto";
   ll = "eza -la --icons auto";
@@ -74,7 +73,6 @@ in
     gh
     neofetch
     fzf
-    connect-package
   ];
 
   home.sessionVariables = {

@@ -11,9 +11,11 @@ let
         RANDOM_WP=$(find "$WALLPAPER_DIR" -type f | shuf -n 1)
 
         if [ -n "$RANDOM_WP" ]; then
-            echo "$RANDOM_WP" > ~/.config/hypr/wallpaper-path.txt
-            pkill swaybg
             swaybg -m fill -i "$RANDOM_WP" &
+            NEW_PID=$!
+            sleep 0.5
+            pgrep swaybg | grep -v "$NEW_PID" | xargs -r kill
+            echo "$RANDOM_WP" > ~/.config/hypr/wallpaper-path.txt
         fi
     }
 
@@ -35,5 +37,6 @@ in
     findutils   
     coreutils   
     procps      
+    gnugrep
   ];
 }
