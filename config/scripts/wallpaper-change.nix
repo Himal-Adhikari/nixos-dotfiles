@@ -28,8 +28,8 @@ let
 
     if [ "$1" = "daemon" ]; then
         while true; do
-            change_wallpaper
             sleep $INTERVAL
+            change_wallpaper
         done
     else
         change_wallpaper
