@@ -29,6 +29,5 @@
     # ./neovim/neovim.nix
     ./syncthing.nix
     ./distrobox.nix
-    ./sioyek.nix
   ];
 }
