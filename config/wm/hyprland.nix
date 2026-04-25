@@ -181,7 +181,6 @@ device {
     sensitivity = -0.5
 }
 
-
 $mainMod = SUPER # Sets "Windows" key as main modifier
 
 bind = $mainMod, RETURN, exec, $terminal
@@ -195,6 +194,11 @@ bind = $mainMod, escape, exec, wlogout --protocol layer-shell
 bind = $mainMod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy
 bind = $mainMod, F, fullscreen
 bind = $mainMod, W, exec, hypr-wallpaper
+bind = $mainMod, G, togglegroup
+bind = $mainMod SHIFT, G, moveintogroup, l
+bind = $mainMod SHIFT, G, moveintogroup, r
+bind = ALT, Tab, changegroupactive, f
+bind = ALT SHIFT, Tab, changegroupactive, b
 
 # Screenshot a window
 bind = $mainMod, PRINT, exec, hyprshot -m window
