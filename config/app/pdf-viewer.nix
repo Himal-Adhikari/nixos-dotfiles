@@ -61,6 +61,8 @@
 
       "toggle_presentation_mode " = "<f5>";
 
+      "toggle_two_page_mode" = "d";
+
       "quit" = "q";
     };
 
