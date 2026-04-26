@@ -57,7 +57,9 @@
 
       "goto_toc" = "<tab>";
 
-      "toggle_dark_mode " = "<C-r>";
+      "toggle_dark_mode " = "<C-d>";
+
+      "reload" = "<C-r>";
 
       "toggle_presentation_mode " = "<f5>";
 
