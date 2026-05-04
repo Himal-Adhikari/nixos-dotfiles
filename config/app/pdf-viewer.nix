@@ -29,8 +29,8 @@
     bindings = {
       "move_up" = "k";
       "move_down" = "j";
-      "move_left" = "h";
-      "move_right" = "l";
+      "move_left" = "l";
+      "move_right" = "h";
 
       "move_down_page" = "<C-f>";
       "move_up_page" = "<C-b>";
