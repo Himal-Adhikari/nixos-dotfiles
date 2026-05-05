@@ -7,7 +7,7 @@
 
       profile = [
         {
-          time = "6:00";
+          time = "4:00";
           identity = true;
         }
         {
