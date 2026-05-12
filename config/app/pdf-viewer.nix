@@ -15,12 +15,12 @@
     kdePackages.okular
   ];
 
-  # programs.zathura = {
-  #   enable = true;
-  #   options = {
-  #     selection-clipboard = "clipboard";
-  #   };
-  # };
+  programs.zathura = {
+    enable = true;
+    options = {
+      selection-clipboard = "clipboard";
+    };
+  };
 
   programs.sioyek = {
 

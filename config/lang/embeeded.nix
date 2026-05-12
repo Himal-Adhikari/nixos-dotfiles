@@ -5,7 +5,12 @@
   ];
 
   home.packages = with pkgs; [
-    # stable.arduino-ide
     # arduino
+    # arduino-ide
+    (arduino-ide.overrideAttrs (old: {
+        postFixup = (old.postFixup or "") + ''
+          wrapProgram $out/bin/arduino-ide --add-flags "--ozone-platform=x11"
+        '';
+    }))
   ];
 }
