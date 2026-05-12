@@ -21,7 +21,7 @@
 
     ./config/scripts/scripts.nix
 
-    # ./config/gaming/gaming.nix
+    ./config/gaming/gaming.nix
 
     ./config/lang/languages.nix
 
