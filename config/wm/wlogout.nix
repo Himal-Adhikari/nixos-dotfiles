@@ -19,7 +19,7 @@
           "label" = "suspend";
           "action" = "systemctl suspend";
           "text" = "Suspend";
-          "keybind" = "u";
+          "keybind" = "s";
       }
       {
           "label" = "hibernate";
@@ -31,7 +31,7 @@
           "label" = "shutdown";
           "action" = "systemctl poweroff";
           "text" = "Shutdown";
-          "keybind" = "s";
+          "keybind" = "S";
       }
       {
           "label" = "reboot";
