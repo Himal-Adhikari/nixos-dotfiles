@@ -13,7 +13,7 @@
     ./helix.nix
     ./office.nix
     ./freecad.nix
-    ./freetube.nix
+    # ./freetube.nix
     ./inkscape.nix
     ./kicad.nix
     ./vscode.nix
