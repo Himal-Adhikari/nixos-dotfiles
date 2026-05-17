@@ -9,7 +9,7 @@
   programs.home-manager.enable = true;
 
   imports = [
-    ./config/wm/hyprland/hyprland.nix
+    ./config/wm/wm.nix
 
     ./config/system_utils.nix
 
