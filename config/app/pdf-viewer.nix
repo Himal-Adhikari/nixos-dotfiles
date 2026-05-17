@@ -3,11 +3,12 @@
   xdg.mimeApps = {
     enable = true;
     associations.added = {
-      "application/pdf" = "sioyek.desktop";
+      "application/pdf" = "org.pwmt.zathura.desktop";
+      # "application/pdf" = "sioyek.desktop";
     };
     defaultApplications = {
-      "application/pdf" = "sioyek.desktop";
-      # "application/epub+zip" = "readest.desktop";
+      "application/pdf" = "org.pwmt.zathura.desktop";
+      # "application/pdf" = "sioyek.desktop";
     };
   };
 
