@@ -30,5 +30,6 @@
     ./syncthing.nix
     ./distrobox.nix
     ./obs.nix
+    ./suwayomi.nix
   ];
 }
