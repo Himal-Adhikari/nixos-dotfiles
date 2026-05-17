@@ -5,7 +5,7 @@
     glib
     adwaita-icon-theme
   ];
-  
+
   qt = {
     enable = true;
     platformTheme.name = "qtct";

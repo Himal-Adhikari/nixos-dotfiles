@@ -1,7 +1,11 @@
 {pkgs, ...}:
 {
   home.sessionVariables = {
-    "NIXOS_OZONE_WL" = "1";
+    "XCURSOR_SIZE" = "24";
+
+    "LIBVA_DRIVER_NAME"="nvidia";
+    "__GLX_VENDOR_LIBRARY_NAME"="nvidia";
+    "ELECTRON_OZONE_PLATFORM_HINT"="auto";
   };
 
   home.packages = with pkgs; [
@@ -25,7 +29,6 @@
     ./wlogout.nix
     ./wofi.nix
     ./hyprsunset.nix
-    # ./hypridle.nix
   ];
 
   wayland.windowManager.hyprland = {
@@ -44,23 +47,13 @@ $browser = librewolf
 
 exec-once = systemctl --user start hyprpolkitagent
 exec-once = udiskie
-exec-once = hyprpaper
 exec-once = nm-applet
 exec-once = waybar
-exec-once = hypridle
 exec-once = hypr-wallpaper daemon
 exec-once = swaybg -m fill -i $(\cat ~/.config/hypr/wallpaper-path.txt)
 exec-once = battery-notification
 
-env = XCURSOR_SIZE,24
 env = HYPRCURSOR_SIZE,24
-
-env = QT_QPA_PLATFORMTHEME,"wayland;xcb"
-env = LIBVA_DRIVER_NAME,nvidia
-env = __GLX_VENDOR_LIBRARY_NAME,nvidia
-env = ELECTRON_OZONE_PLATFORM_HINT,auto
-
-env = QT_STYLE_OVERRIDE,kvantum
 
 general {
     gaps_in = 0
