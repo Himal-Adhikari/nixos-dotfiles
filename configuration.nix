@@ -24,11 +24,9 @@
       ./config/shell/nix-ld.nix
 
       ./config/appimage.nix
-      ./config/gaming/gamemode.nix
 
       ./config/app/files.nix
       ./config/app/localsend.nix
-      # ./config/app/suwayomi.nix
       
       ./config/udev_rules/controller.nix
 
