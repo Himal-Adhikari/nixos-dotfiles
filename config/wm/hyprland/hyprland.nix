@@ -28,144 +28,167 @@
     portalPackage = pkgs.xdg-desktop-portal-hyprland; # xdph none git
     xwayland.enable = true;
     systemd.enable = true;
-    extraConfig = ''
-monitor=,preferred,auto,1
+    settings = {
+      "monitor" = ",preferred,auto,1";
 
-$terminal = kitty
-$fileManager = nautilus
-$menu = wofi --show drun --allow-images
-$executable_menu = wofi --show run
-$browser = librewolf
+      "$mainMod" = "SUPER";
+      "$terminal" = "kitty";
+      "$fileManager" = "nautilus";
+      "$menu" = "wofi --show drun --allow-images";
+      "$executable_menu" = "wofi --show run";
+      "$browser" = "librewolf";
 
-exec-once = systemctl --user start hyprpolkitagent
-exec-once = udiskie
-exec-once = nm-applet
-exec-once = waybar
-exec-once = hypr-wallpaper daemon
-exec-once = swaybg -m fill -i $(\cat ~/.config/hypr/wallpaper-path.txt)
-exec-once = battery-notification
+      exec-once = [
+        "systemctl --user start hyprpolkitagent"
+        "udiskie"
+        "nm-applet"
+        "waybar"
+        "hypr-wallpaper daemon"
+        "swaybg -m fill -i $(\cat ~/.config/hypr/wallpaper-path.txt)"
+        "battery-notification"
+      ];
 
-env = HYPRCURSOR_SIZE,24
+      env = [
+        "HYPRCURSOR_SIZE,24"
+      ];
 
-general {
-    gaps_in = 0
-    gaps_out = 0
+      general = {
+        "gaps_in" = 0;
+        "gaps_out" = 0;
+        "border_size" = 1;
 
-    border_size = 1
+        # https://wiki.hyprland.org/Configuring/Variables/#variable-types for info about colors
+        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+        "col.inactive_border" = "rgba(595959aa)";
 
-    # https://wiki.hyprland.org/Configuring/Variables/#variable-types for info about colors
-    col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
-    col.inactive_border = rgba(595959aa)
+        # Set to true enable resizing windows by clicking and dragging on borders and gaps
+        "resize_on_border" = false;
 
-    # Set to true enable resizing windows by clicking and dragging on borders and gaps
-    resize_on_border = false
+        # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
+        "allow_tearing" = false;
 
-    # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
-    allow_tearing = false
+        "layout" = "dwindle";
+      };
 
-    layout = dwindle
-}
+      decoration = {
+        "rounding" = 0;
+        "rounding_power" = 2;
 
-decoration {
-    rounding = 0
-    rounding_power = 2
+        # Change transparency of focused and unfocused windows
+        "active_opacity" = 1.0;
+        "inactive_opacity" = 1.0;
 
-    # Change transparency of focused and unfocused windows
-    active_opacity = 1.0
-    inactive_opacity = 1.0
+        shadow = {
+          "enabled" = false;
+        };
 
-    shadow {
-        enabled = false
-        range = 4
-        render_power = 3
-        color = rgba(1a1a1aee)
-    }
+        blur = {
+          "enabled" = false;
+        };
+      };
 
-    # https://wiki.hyprland.org/Configuring/Variables/#blur
-    blur {
-        enabled = false
-        size = 2
-        passes = 1
+      animations = {
+        "enabled" = false;
+      };
 
-        vibrancy = 0.1696
-    }
-}
+      master = {
+        "new_status" = "master";
+      };
 
-animations {
-    enabled = false
+      misc = {
+        "vfr" = true;
+        "enable_anr_dialog" = false;
+        "force_default_wallpaper" = 0;
+        "disable_hyprland_logo" = true;
+      };
 
-    # Default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
+      ecosystem = {
+        "no_update_news" = true;
+        "no_donation_nag" = true;
+      };
 
-    bezier = easeOutQuint,0.23,1,0.32,1
-    bezier = easeInOutCubic,0.65,0.05,0.36,1
-    bezier = linear,0,0,1,1
-    bezier = almostLinear,0.5,0.5,0.75,1.0
-    bezier = quick,0.15,0,0.1,1
+      input = {
+        "kb_layout" = "us";
+        "kb_options" = "caps:escape";
+        "follow_mouse" = 1;
 
-    animation = global, 1, 10, default
-    animation = border, 1, 5.39, easeOutQuint
-    animation = windows, 1, 4.79, easeOutQuint
-    animation = windowsIn, 1, 4.1, easeOutQuint, popin 87%
-    animation = windowsOut, 1, 1.49, linear, popin 87%
-    animation = fadeIn, 1, 1.73, almostLinear
-    animation = fadeOut, 1, 1.46, almostLinear
-    animation = fade, 1, 3.03, quick
-    animation = layers, 1, 3.81, easeOutQuint
-    animation = layersIn, 1, 4, easeOutQuint, fade
-    animation = layersOut, 1, 1.5, linear, fade
-    animation = fadeLayersIn, 1, 1.79, almostLinear
-    animation = fadeLayersOut, 1, 1.39, almostLinear
-    animation = workspaces, 1, 1.94, almostLinear, fade
-    animation = workspacesIn, 1, 1.21, almostLinear, fade
-    animation = workspacesOut, 1, 1.94, almostLinear, fade
-}
+        "sensitivity" = 0;
 
-dwindle {
-    pseudotile = true # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
-    preserve_split = true # You probably want this
-}
+        touchpad = {
+          "natural_scroll" = true;
+        };
+      };
 
-master {
-    new_status = master
-}
+      "gesture" = "3, horizontal, workspace";
 
-misc {
-    vfr = true
-    enable_anr_dialog = false
-    force_default_wallpaper = 0 # Set to 0 or 1 to disable the anime mascot wallpapers
-    disable_hyprland_logo = false # If true disables the random hyprland logo / anime girl background. :(
-}
+      bind = [
+        # General
+        "$mainMod, RETURN, exec, $terminal"
+        "$mainMod, B, exec, $browser"
+        "$mainMod, Q, killactive,"
+        "$mainMod, T, exec, $fileManager"
+        "$mainMod, Space, togglefloating,"
+        "$mainMod, R, exec, $menu"
+        "$mainMod SHIFT, R, exec, $executable_menu"
+        "$mainMod, escape, exec, wlogout --protocol layer-shell"
+        "$mainMod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
+        "$mainMod, F, fullscreen"
+        "$mainMod, W, exec, hypr-wallpaper"
 
-ecosystem {
-  no_update_news = true
-  no_donation_nag = true
-}
+        # Screenshot
+        "$mainMod, PRINT, exec, hyprshot -m window"
+        "PRINT, exec, hyprshot -m output"
+        "SHIFT, PRINT, exec, hyprshot -m region"
 
-input {
-    kb_layout = us
-    kb_variant =
-    kb_model =
-    kb_options =
-    kb_rules =
+        # Special Workspace
+        "$mainMod, S, togglespecialworkspace, magic"
+        "$mainMod SHIFT, S, movetoworkspace, special:magic"
 
-    kb_options = caps:escape
+        # Browse workspace with mouse
+        "$mainMod, mouse_down, workspace, e+1"
+        "$mainMod, mouse_up, workspace, e-1"
 
-    follow_mouse = 1
+        # Move windows with mouse
+        "$mainMod, mouse:272, movewindow"
+        "$mainMod, mouse:273, resizewindow"
 
-    sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
+        # Workspace Control
+        "$mainMod, H, movefocus, l"
+        "$mainMod, L, movefocus, r"
+        "$mainMod, K, movefocus, u"
+        "$mainMod, J, movefocus, d"
 
-    touchpad {
-        natural_scroll = true
-    }
-}
+        "$mainMod, 1, workspace, 1"
+        "$mainMod, 2, workspace, 2"
+        "$mainMod, 3, workspace, 3"
+        "$mainMod, 4, workspace, 4"
+        "$mainMod, 5, workspace, 5"
+        "$mainMod, 6, workspace, 6"
+        "$mainMod, 7, workspace, 7"
+        "$mainMod, 8, workspace, 8"
+        "$mainMod, 9, workspace, 9"
+        "$mainMod, 0, workspace, 10"
 
-gesture = 3, horizontal, workspace
+        "$mainMod SHIFT, 1, movetoworkspace, 1"
+        "$mainMod SHIFT, 2, movetoworkspace, 2"
+        "$mainMod SHIFT, 3, movetoworkspace, 3"
+        "$mainMod SHIFT, 4, movetoworkspace, 4"
+        "$mainMod SHIFT, 5, movetoworkspace, 5"
+        "$mainMod SHIFT, 6, movetoworkspace, 6"
+        "$mainMod SHIFT, 7, movetoworkspace, 7"
+        "$mainMod SHIFT, 8, movetoworkspace, 8"
+        "$mainMod SHIFT, 9, movetoworkspace, 9"
+        "$mainMod SHIFT, 0, movetoworkspace, 10"
 
-device {
-    name = epic-mouse-v1
-    sensitivity = -0.5
-}
+        # Modifier Keys
+        "XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+        "XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        "XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        "XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+        "XF86MonBrightnessUp, exec, brightnessctl -e4 -n2 set 5%+"
+        "XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5%-"
 
+<<<<<<< HEAD
 $mainMod = SUPER # Sets "Windows" key as main modifier
 
 bind = $mainMod, RETURN, exec, $terminal
@@ -240,6 +263,14 @@ bindl = , XF86AudioPause, exec, playerctl play-pause
 bindl = , XF86AudioPlay, exec, playerctl play-pause
 bindl = , XF86AudioPrev, exec, playerctl previous
       '';
+=======
+        "XF86AudioNext, exec, playerctl next"
+        "XF86AudioPause, exec, playerctl play-pause"
+        "XF86AudioPlay, exec, playerctl play-pause"
+        "XF86AudioPrev, exec, playerctl previous"
+      ];
+    };
+>>>>>>> 6cba87f (Hyprland Config migrated to be written in pure nix)
   };
 
   programs.hyprlock = {
