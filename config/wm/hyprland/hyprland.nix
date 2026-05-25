@@ -198,9 +198,9 @@
     };
   };
 
-  programs.hyprlock = {
-    enable = true;  
-  };
+  # programs.hyprlock = {
+  #   enable = true;  
+  # };
 
   programs.hyprshot = {
     enable = true;  
