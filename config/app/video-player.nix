@@ -7,9 +7,15 @@
   programs.mpv = {
     enable = true;
     config = {
-      alang = "jpn,jp,eng,en";
       slang = "eng,en";
       sid = "auto";
+    };
+    profiles = {
+      anime-settings = {
+        profile-cond="string.match(path, \"Anime/\") ~= nil";
+        alang="jpn,jp";
+        slang = "enm,eng,en";
+      };
     };
   };
 }
