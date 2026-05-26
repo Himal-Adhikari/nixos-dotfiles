@@ -2,6 +2,14 @@
 {
   home.packages = with pkgs; [
     vlc
-    mpv
   ];
+
+  programs.mpv = {
+    enable = true;
+    config = {
+      alang = "jpn,jp,eng,en";
+      slang = "eng,en";
+      sid = "auto";
+    };
+  };
 }
