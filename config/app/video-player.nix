@@ -13,7 +13,7 @@
     profiles = {
       anime-settings = {
         profile-cond="string.match(path, \"Anime/\") ~= nil";
-        alang="jpn,jp";
+        alang="ja,jpn,jp";
         slang = "enm,eng,en";
       };
     };
