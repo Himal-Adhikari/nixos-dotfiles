@@ -17,7 +17,6 @@
     ./inkscape.nix
     ./kicad.nix
     ./vscode.nix
-    ./gimp.nix
     ./camera.nix
     ./calculator.nix
     ./ebook-reader.nix
