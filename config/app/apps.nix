@@ -31,5 +31,6 @@
     ./distrobox.nix
     ./obs.nix
     ./suwayomi.nix
+    ./krita.nix
   ];
 }
