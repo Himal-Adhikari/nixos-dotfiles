@@ -1,6 +1,6 @@
-{ pkgs, ... }:
+{ unstable, ... }:
 {
-  programs.eden = {
-    enable = true;
-  };
+  home.packages = [
+    unstable.eden
+  ];
 }
