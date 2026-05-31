@@ -1,6 +1,6 @@
-{ unstable, ... }:
+{ pkgs, ... }:
 {
   home.packages = [
-    unstable.eden
+    pkgs.eden
   ];
 }
