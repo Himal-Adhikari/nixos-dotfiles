@@ -78,7 +78,7 @@
 
       "should_draw_unrendered_pages" = "0";
 
-      "fit_to_page_width_ratio" = "0.75";
+      "fit_to_page_width_ratio" = "0.6";
     };
 
   };
