@@ -38,6 +38,9 @@
       "screen_up" = "<C-u>";
       "screen_down" = "<C-d>";
 
+      "next_state" = "<C-i>";
+      "prev_state" = "<C-o>";
+
       "goto_top_of_page" = "H";
       "goto_bottom_of_page" = "L";
       "next_page;goto_top_of_page" = "J";
@@ -48,7 +51,8 @@
 
       "zoom_in" = "+";
       "zoom_out" = "-";
-      "fit_to_page_width_ratio" = "s";
+      "fit_to_page_width" = "s";
+      "fit_to_page_width_ratio" = "=";
       "fit_to_page_height" = "a";
 
       "search" = "/";
