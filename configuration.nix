@@ -30,7 +30,7 @@
       
       ./config/udev_rules/controller.nix
 
-      ./config/app/docker.nix
+      # ./config/app/docker.nix
     ];
 
   # Set your time zone.
@@ -85,7 +85,7 @@
   users.users.${username} = {
     isNormalUser = true;
     description = "${username}";
-    extraGroups = [ "networkmanager" "wheel" "dialout" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" "input" "uinput" ];
     shell = pkgs.zsh;
   };
 

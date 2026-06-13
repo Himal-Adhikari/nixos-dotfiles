@@ -27,7 +27,7 @@
     ./music_player.nix
     # ./neovim/neovim.nix
     ./syncthing.nix
-    ./distrobox.nix
+    # ./distrobox.nix
     ./obs.nix
     ./suwayomi.nix
     ./krita.nix
