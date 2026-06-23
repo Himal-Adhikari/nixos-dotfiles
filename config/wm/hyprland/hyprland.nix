@@ -28,6 +28,7 @@
     portalPackage = pkgs.xdg-desktop-portal-hyprland; # xdph none git
     xwayland.enable = true;
     systemd.enable = true;
+    configType = "hyprlang";
     settings = {
       "monitor" = ",preferred,auto,1";
 
@@ -96,7 +97,7 @@
       };
 
       misc = {
-        "vfr" = true;
+        # "vfr" = true;
         "enable_anr_dialog" = false;
         "force_default_wallpaper" = 0;
         "disable_hyprland_logo" = true;

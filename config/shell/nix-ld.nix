@@ -25,19 +25,19 @@
       xz
       systemd
 
-      xorg.libXcomposite
-      xorg.libXtst
-      xorg.libXrandr
-      xorg.libXext
-      xorg.libX11
-      xorg.libXfixes
+      libxcomposite
+      libxtst
+      libxrandr
+      libxext
+      libx11
+      libxfixes
       libGL
       libva
       pipewire
-      xorg.libxcb
-      xorg.libXdamage
-      xorg.libxshmfence
-      xorg.libXxf86vm
+      libxcb
+      libxdamage
+      libxshmfence
+      libxxf86vm
       libelf
 
       glib
@@ -56,13 +56,13 @@
       zenity
 
       # # Without these it silently fails
-      xorg.libXinerama
-      xorg.libXcursor
-      xorg.libXrender
-      xorg.libXScrnSaver
-      xorg.libXi
-      xorg.libSM
-      xorg.libICE
+      libxinerama
+      libxcursor
+      libxrender
+      libxscrnsaver
+      libxi
+      libsm
+      libice
       gnome2.GConf
       nspr
       nss
@@ -83,13 +83,13 @@
       gsettings-desktop-schemas
 
       # Verified games requirements
-      xorg.libXt
-      xorg.libXmu
+      libxt
+      libxmu
       libogg
       libvorbis
       SDL
       SDL2_image
-      glew110
+      glew_1_10
       libidn
       tbb
 
@@ -118,7 +118,7 @@
       libgcrypt
       libvpx
       librsvg
-      xorg.libXft
+      libxft
       libvdpau
 
       wayland

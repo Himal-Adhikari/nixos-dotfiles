@@ -71,7 +71,6 @@ in
     tealdeer
     lshw
     gh
-    neofetch
     fzf
   ];
 

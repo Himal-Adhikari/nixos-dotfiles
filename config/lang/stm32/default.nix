@@ -55,8 +55,8 @@ stdenv.mkDerivation {
       at-spi2-atk
       cups
       cairo
-      xorg.libXcomposite
-      xorg.libXdamage
+      libxcomposite
+      libxdamage
       libxfixes
       libgbm
       expat

@@ -11,7 +11,7 @@
     ];
 
     winePackages = with pkgs; [
-      wineWowPackages.full
+      wineWow64Packages.full
     ];
 
     extraPackages = with pkgs; [
