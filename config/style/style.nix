@@ -11,17 +11,6 @@ let
     accents = [ "blue" ];
     size = "standard";
   };
-
-  qt5Palette = "${pkgs.catppuccin-qt5ct}/share/qt5ct/colors/catppuccin-mocha-blue.conf";
-  qt6Palette = "${pkgs.catppuccin-qt5ct}/share/qt6ct/colors/catppuccin-mocha-blue.conf";
-
-  qtctConf = palette: ''
-    [Appearance]
-    style=kvantum
-    custom_palette=true
-    color_scheme_path=${palette}
-    standard_dialogs=default
-  '';
 in
 {
   home.packages = with pkgs; [
@@ -43,18 +32,6 @@ in
 
     "Kvantum/catppuccin-mocha-blue".source =
       "${catppuccinKvantumMocha}/share/Kvantum/catppuccin-mocha-blue";
-
-    "qt5ct/colors/catppuccin-mocha-blue.conf".source = qt5Palette;
-    "qt6ct/colors/catppuccin-mocha-blue.conf".source = qt6Palette;
-
-    "qt5ct/qt5ct.conf" = {
-      text = qtctConf qt5Palette;
-      force = true;
-    };
-    "qt6ct/qt6ct.conf" = {
-      text = qtctConf qt6Palette;
-      force = true;
-    };
   };
 
   gtk = {
