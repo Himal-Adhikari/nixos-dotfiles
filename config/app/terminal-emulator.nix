@@ -5,7 +5,7 @@
     themeFile = "Catppuccin-Mocha";
     font = {
       size = 11.0;
-      name = "JetBrains Mono";
+      name = "JetBrainsMono Nerd Font";
     };
     extraConfig = ''
       # background_opacity 1.0

@@ -35,6 +35,10 @@ in
       eval "$(zoxide init zsh)"
       unsetopt BEEP
       stty -ixon
+      bindkey -v
+      export KEYTIMEOUT=1
+      bindkey '^R' history-incremental-search-backward
+      bindkey '^[l' clear-screen
       '';
 
     oh-my-zsh = {

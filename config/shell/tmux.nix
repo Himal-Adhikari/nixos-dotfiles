@@ -9,7 +9,6 @@
     escapeTime = 0;
     plugins = with pkgs; [
       tmuxPlugins.sensible
-      tmuxPlugins.vim-tmux-navigator
       tmuxPlugins.catppuccin
       tmuxPlugins.yank
     ];
@@ -26,31 +25,35 @@
 
     bind f resize-pane -Z
 
+    bind e capture-pane -J -S - \; \
+      save-buffer /tmp/tmux-scrollback.log \; \
+      new-window -n scrollback "$EDITOR /tmp/tmux-scrollback.log; rm -f /tmp/tmux-scrollback.log"
+
     bind-key -T copy-mode-vi v send-keys -X begin-selection
     bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
     bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
 
+    bind -n C-h if-shell -F "#{pane_at_left}"  "previous-window" "select-pane -L"
+    bind -n C-l if-shell -F "#{pane_at_right}" "next-window"     "select-pane -R"
+    bind -n C-j select-pane -D
+    bind -n C-k select-pane -U
+
+    bind -n C-t new-window -c "#{pane_current_path}"
     bind-key -n C-Tab next-window
     bind-key -n C-BTab previous-window
 
-    bind -n C-t new-window
-    bind -n C-w killw
+    bind -n C-q kill-session
 
-    set-window-option -g status-position top
+    bind r source-file ~/.config/tmux/tmux.conf \; display "tmux config reloaded"
 
     set -g @catppuccin_flavor "mocha"
     set -g @catppuccin_window_status_style "rounded"
-    set -g @catppuccin_status_background "#242638" 
-    set -g @catppuccin_window_current_text " #{b:pane_current_path}"
     set -g @catppuccin_window_text " #{b:pane_current_path}"
-
-    # Load catppuccin
-    run "~/.config/tmux/plugins/tmux/catppuccin.tmux"
-    # Make the status line pretty and add some modules
+    set -g @catppuccin_window_current_text " #{b:pane_current_path}"
     set -g status-right-length 100
-    set -g status-left-length 100
     set -g status-left "#{E:@catppuccin_status_session}"
     set -g status-right "#{E:@catppuccin_status_application}"
+
     set-window-option -g status-position top
     '';
 
