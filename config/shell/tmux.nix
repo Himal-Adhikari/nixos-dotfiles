@@ -9,7 +9,15 @@
     escapeTime = 0;
     plugins = with pkgs; [
       tmuxPlugins.sensible
-      tmuxPlugins.catppuccin
+      {
+        plugin = tmuxPlugins.catppuccin;
+        extraConfig = ''
+          set -g @catppuccin_flavor "mocha"
+          set -g @catppuccin_window_status_style "rounded"
+          set -g @catppuccin_window_text " #{b:pane_current_path}"
+          set -g @catppuccin_window_current_text " #{b:pane_current_path}"
+        '';
+      }
       tmuxPlugins.yank
     ];
     terminal = "tmux-256color";
@@ -46,10 +54,6 @@
 
     bind r source-file ~/.config/tmux/tmux.conf \; display "tmux config reloaded"
 
-    set -g @catppuccin_flavor "mocha"
-    set -g @catppuccin_window_status_style "rounded"
-    set -g @catppuccin_window_text " #{b:pane_current_path}"
-    set -g @catppuccin_window_current_text " #{b:pane_current_path}"
     set -g status-right-length 100
     set -g status-left "#{E:@catppuccin_status_session}"
     set -g status-right "#{E:@catppuccin_status_application}"
