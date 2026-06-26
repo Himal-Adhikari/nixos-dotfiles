@@ -17,17 +17,14 @@ with lib;
   	};
 
   services.xserver.enable = true;
-  services.xserver.videoDrivers = [
-    "modesetting"
-    "nvidia"
-  ];
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia = {
     # Modesetting is required.
     modesetting.enable = true;
       
     # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
-    powerManagement.enable = false;
+    powerManagement.enable = true;
       
     # Fine-grained power management. Turns off GPU when not in use.
     # Experimental and only works on modern Nvidia GPUs (Turing or newer).
@@ -56,11 +53,10 @@ with lib;
   };
 
   hardware.nvidia.prime = {
-    # offload = {
-    #   enable = lib.mkOverride 990 true;
-    #   enableOffloadCmd = lib.mkIf config.hardware.nvidia.prime.offload.enable true;
-    # };
-    sync.enable = true;
+    offload = {
+      enable = true;
+      enableOffloadCmd = true;
+    };
 
 		# Make sure to use the correct Bus ID values for your system!
 		intelBusId = "PCI:0:2:0";
