@@ -23,6 +23,10 @@ in
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     enableCompletion = true;
+    completionInit = "autoload -U compinit && compinit -C";
+
+    # Skip /etc/zprofile and /etc/zshrc. Must be in .zshenv since those run before .zshrc.
+    envExtra = "setopt no_global_rcs";
 
     dotDir = "${config.home.homeDirectory}/.config/zsh";
 
@@ -39,15 +43,21 @@ in
       export KEYTIMEOUT=1
       bindkey '^R' history-incremental-search-backward
       bindkey '^[l' clear-screen
-      '';
+      bindkey -M vicmd '_' vi-first-non-blank
 
-    oh-my-zsh = {
-      enable = true;
-      theme = "muse";
-      plugins = [
-        "direnv"
-      ];
-    };
+      # muse-style prompt: cwd (branch) ✘ ᐅ
+      # ᐅ is green on success, red on last-command failure.
+      autoload -Uz vcs_info
+      zstyle ':vcs_info:*' enable git
+      zstyle ':vcs_info:git:*' check-for-changes true
+      zstyle ':vcs_info:git:*' stagedstr     ' %F{magenta}✘%f'
+      zstyle ':vcs_info:git:*' unstagedstr   ' %F{magenta}✘%f'
+      zstyle ':vcs_info:git:*' formats       ' %F{blue}(%b)%f%c%u'
+      zstyle ':vcs_info:git:*' actionformats ' %F{blue}(%b|%a)%f%c%u'
+      precmd_functions+=(vcs_info)
+      setopt PROMPT_SUBST
+      PROMPT='%F{117}%~%f''${vcs_info_msg_0_} %(?.%F{green}.%F{red})ᐅ%f '
+      '';
   };
 
   programs.bash = {
