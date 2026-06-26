@@ -15,6 +15,7 @@ in
     ./btop.nix
     ./yazi/yazi.nix
     ./git.nix
+    ./starship.nix
   ];
   
   programs.zsh = {
@@ -44,19 +45,6 @@ in
       bindkey '^R' history-incremental-search-backward
       bindkey '^[l' clear-screen
       bindkey -M vicmd '_' vi-first-non-blank
-
-      # muse-style prompt: cwd (branch) ✘ ᐅ
-      # ᐅ is green on success, red on last-command failure.
-      autoload -Uz vcs_info
-      zstyle ':vcs_info:*' enable git
-      zstyle ':vcs_info:git:*' check-for-changes true
-      zstyle ':vcs_info:git:*' stagedstr     ' %F{magenta}✘%f'
-      zstyle ':vcs_info:git:*' unstagedstr   ' %F{magenta}✘%f'
-      zstyle ':vcs_info:git:*' formats       ' %F{blue}(%b)%f%c%u'
-      zstyle ':vcs_info:git:*' actionformats ' %F{blue}(%b|%a)%f%c%u'
-      precmd_functions+=(vcs_info)
-      setopt PROMPT_SUBST
-      PROMPT='%F{117}%~%f''${vcs_info_msg_0_} %(?.%F{green}.%F{red})ᐅ%f '
       '';
   };
 

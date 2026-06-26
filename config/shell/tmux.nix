@@ -51,6 +51,7 @@
     bind-key -n C-BTab previous-window
 
     bind -n C-q kill-session
+    bind -n C-w kill-window
 
     bind r source-file ~/.config/tmux/tmux.conf \; display "tmux config reloaded"
 

@@ -22,7 +22,7 @@
 
   services.logind.settings.Login = {
     HandleLidSwitch = "suspend";
-    HandleLidSwitchExternalPower = "ignore";
+    HandleLidSwitchExternalPower = "lock";
     HandleLidSwitchDocked = "ignore";
   };
 }
