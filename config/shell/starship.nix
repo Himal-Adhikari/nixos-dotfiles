@@ -33,7 +33,7 @@
       };
 
       cmd_duration = {
-        format = "[$duration]($style) ";
+        format = " [$duration]($style) ";
         style = "yellow";
       };
 

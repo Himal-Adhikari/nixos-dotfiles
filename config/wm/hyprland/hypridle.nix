@@ -2,7 +2,7 @@
 let
   lockScript = pkgs.writeShellScript "hypridle-lock" ''
     ${pkgs.procps}/bin/pidof hyprlock || ${pkgs.hyprlock}/bin/hyprlock &
-    sleep 5
+    sleep 3
     ${pkgs.hyprland}/bin/hyprctl dispatch dpms off
   '';
 
