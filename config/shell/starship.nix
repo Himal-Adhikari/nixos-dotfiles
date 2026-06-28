@@ -36,11 +36,6 @@
         format = " [$duration]($style) ";
         style = "yellow";
       };
-
-      # python = {
-      #   format = "[$virtualenv]($style) ";
-      #   style = "bright-black";
-      # };
     };
   };
 }

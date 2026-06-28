@@ -18,6 +18,7 @@
       winetricks
       gamescope
       mangohud
+      gamemode
     ];
 
     defaultWinePackage = pkgs.proton-ge-bin;
@@ -28,7 +29,8 @@
     runners.wine.settings.runner = {
       battleye = false;
       eac = false;
-      esync = false;
+      esync = true;
+      fsync = true;
     };
   };
 }

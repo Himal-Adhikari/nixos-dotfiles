@@ -30,7 +30,11 @@
       
       ./config/udev_rules/controller.nix
 
-      # ./config/app/docker.nix
+      ./config/gaming/gamemode.nix
+
+      # ./config/gaming/steam.nix
+
+      ./config/app/docker.nix
     ];
 
   # Set your time zone.
