@@ -72,6 +72,9 @@
 
       "toggle_statusbar" = "<C-n>";
 
+      "add_highlight" = "t";
+      "delete_highlight" = "T";
+
       "quit" = "q";
     };
 
