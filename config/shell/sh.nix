@@ -37,6 +37,8 @@ in
       share = true;
     };
     initContent = ''
+      # Case-insensitive tab completion
+      zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
       eval "$(zoxide init zsh)"
       unsetopt BEEP
       stty -ixon

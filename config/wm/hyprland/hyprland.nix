@@ -52,6 +52,14 @@
 
       env = [
         "HYPRCURSOR_SIZE,24"
+
+        # NVIDIA on Wayland: use the nvidia-drm GBM backend and disable
+        # G-Sync/VRR presentation paths to reduce scroll tearing/stutter.
+        "GBM_BACKEND,nvidia-drm"
+        "__GLX_VENDOR_LIBRARY_NAME,nvidia"
+        "LIBVA_DRIVER_NAME,nvidia"
+        "__GL_GSYNC_ALLOWED,0"
+        "__GL_VRR_ALLOWED,0"
       ];
 
       general = {
