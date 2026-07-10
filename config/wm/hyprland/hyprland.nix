@@ -31,7 +31,10 @@
     systemd.enable = true;
     configType = "hyprlang";
     settings = {
-      "monitor" = ",preferred,auto,1";
+      "monitor" = [
+        "eDP-1,preferred,auto,1"
+        ",preferred,auto-right,1"
+      ];
 
       "$mainMod" = "SUPER";
       "$terminal" = "kitty";
@@ -165,6 +168,12 @@
         "$mainMod, L, movefocus, r"
         "$mainMod, K, movefocus, u"
         "$mainMod, J, movefocus, d"
+
+        # Move the focused window to the monitor in a direction
+        "$mainMod SHIFT, H, movewindow, mon:l"
+        "$mainMod SHIFT, L, movewindow, mon:r"
+        "$mainMod SHIFT, K, movewindow, mon:u"
+        "$mainMod SHIFT, J, movewindow, mon:d"
 
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
