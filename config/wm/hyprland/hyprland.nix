@@ -164,10 +164,10 @@
         "$mainMod, mouse_up, workspace, e-1"
 
         # Workspace Control
-        "$mainMod, H, movefocus, l"
-        "$mainMod, L, movefocus, r"
-        "$mainMod, K, movefocus, u"
-        "$mainMod, J, movefocus, d"
+        "$mainMod, h, movefocus, l"
+        "$mainMod, l, movefocus, r"
+        "$mainMod, k, movefocus, u"
+        "$mainMod, j, movefocus, d"
 
         # Move the focused window to the monitor in a direction
         "$mainMod SHIFT, H, movewindow, mon:l"

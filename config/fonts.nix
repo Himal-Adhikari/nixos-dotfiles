@@ -11,6 +11,7 @@
       adwaita-icon-theme
       fontconfig
       newcomputermodern
+      lmodern
     ];
     fontconfig = {
       useEmbeddedBitmaps = true;

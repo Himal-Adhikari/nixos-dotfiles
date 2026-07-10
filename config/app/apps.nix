@@ -31,5 +31,6 @@
     ./obs.nix
     ./suwayomi.nix
     ./krita.nix
+    ./drawio.nix
   ];
 }
