@@ -32,7 +32,7 @@
 
       ./config/gaming/gamemode.nix
 
-      # ./config/gaming/steam.nix
+      ./config/gaming/steam.nix
 
       ./config/app/docker.nix
     ];
