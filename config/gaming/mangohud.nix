@@ -16,6 +16,7 @@
       # Visual
       preset = 3; # extended layout
       gpu_stats = true;
+      gpu_list = 0; # only show GPU index 1 (not 0)
       cpu_stats = true;
       fps = true;
       frametime = true;
