@@ -24,7 +24,14 @@
     defaultWinePackage = pkgs.proton-ge-bin;
 
     runners.wine.settings.system = {
-      mangohud = false;
+      # wine-ge deferred its swapchain presentation on the GTX 1050 Ti (580
+      # driver), so games rendered into a buffer but weren't shown until the
+      # present loop got kicked ("renders only after a while"). Loading the
+      # MangoHud layer hooks the swapchain and forces continuous presentation,
+      # which fixes it. The overlay itself is hidden by default via the
+      # home-manager MangoHud config (no_display, see mangohud.nix); the layer
+      # still loads while hidden, so the fix holds without a visible HUD.
+      mangohud = true;
     };
     runners.wine.settings.runner = {
       battleye = false;
