@@ -1,6 +1,6 @@
 { stdenv, lib, pkgs }:
 let 
-  version = "1.11.0";
+  version = "1.12.0";
   pkg_name = "stm32cubemon-lin-v-${
       builtins.replaceStrings [ "." ] [ "-" ] version
     }";
@@ -13,7 +13,7 @@ stdenv.mkDerivation {
   src = pkgs.requireFile {
     name = "${pkg_name}.zip";
     url = "https://www.st.com/en/development-tools/stm32cubemonitor.html";
-    sha256 = "0i992x0ci8wa98ckdk30ihsmjgim1syq1kdp4k1pqxiwb9mrza5a";
+    sha256 = "1q9gqb2rnlln1gpgc5kywvrh3llw03a4ryf6l1znsdz56c6nqngr";
   };
 
   buildInputs = with pkgs; [ dpkg unzip ];
