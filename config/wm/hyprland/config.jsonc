@@ -58,6 +58,8 @@
     "on-click": "bash -c 'systemctl --user is-active --quiet hyprsunset && systemctl --user stop hyprsunset || systemctl --user start hyprsunset'"
   },
   "battery": {
+    "bat": "BAT1",
+    "adapter": "ACAD",
     "interval": 30,
     "states": {
       "warning": 30,
