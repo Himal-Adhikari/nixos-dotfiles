@@ -47,6 +47,13 @@ in
       bindkey '^R' history-incremental-search-backward
       bindkey '^[l' clear-screen
       bindkey -M vicmd '_' vi-first-non-blank
+
+      # Inside distrobox (Debian/Ubuntu), bat ships as `batcat`. Re-point aliases
+      # when batcat exists but bat doesn't, so the shared zshrc still works there.
+      if command -v batcat > /dev/null 2>&1 && ! command -v bat > /dev/null 2>&1; then
+        alias bat='batcat'
+        alias cat='batcat'
+      fi
       '';
   };
 
