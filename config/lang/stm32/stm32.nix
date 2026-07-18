@@ -1,6 +1,6 @@
 { pkgs, ...}:
   let
-    stm32cube-monitor = pkgs.callPackage ./default.nix { };
+    # stm32cube-monitor = pkgs.callPackage ./default.nix { };
     cubeprogrammer = pkgs.callPackage ./cube-programmer.nix { };
 in
 {
@@ -9,6 +9,6 @@ in
     cubeprogrammer
     gcc-arm-embedded
     stm32flash
-    stm32cube-monitor
+    # stm32cube-monitor
   ];
 }
