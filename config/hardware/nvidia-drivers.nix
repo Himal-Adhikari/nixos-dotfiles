@@ -52,6 +52,8 @@ with lib;
     package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
   };
 
+  hardware.nvidia-container-toolkit.enable = true;
+
   hardware.nvidia.prime = {
     sync.enable = true;
 
