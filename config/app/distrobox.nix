@@ -24,7 +24,7 @@
         # MATLAB Stuff
         "libx11-6" "libxext6" "libxt6" "libxrandr2" "libxi6" "libxfixes3"
         "libxcursor1" "libxinerama1" "libxcomposite1" "libxdamage1" "libxtst6"
-        "libxrender1" "libxkbcommon0"
+        "libxrender1" "libxkbcommon0" "libxft2"
         "libgl1" "libglu1-mesa" "libglx-mesa0" "libgbm1" "libdrm2"
         "mesa-utils"
         "libgtk-3-0t64" "libnss3" "libnspr4" "libatk1.0-0t64"
