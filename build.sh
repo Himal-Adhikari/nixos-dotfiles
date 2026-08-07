@@ -4,7 +4,6 @@ set -e
 diff_exists=$(git diff flake.lock | wc -l)
 
 if [ "$diff_exists" -ne 0 ]; then
-  nix-prefetch-url --type sha256 file:///home/himal/Downloads/stm32cubemon-lin-v-1-12-0.zip &>/dev/null
   nix-prefetch-url --type sha256 file:///home/himal/Downloads/stm32cubeprg-lin-v2-21-0.zip &>/dev/null
 fi
  
