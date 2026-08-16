@@ -39,7 +39,7 @@
       # Read from /run/cdi/nvidia-container-toolkit.json (nvidia.com/gpu=all).
       additional_flags = "--device nvidia.com/gpu=all";
       pull = true;
-      start_now = false;
+      start_now = true;
     };
   };
 }
