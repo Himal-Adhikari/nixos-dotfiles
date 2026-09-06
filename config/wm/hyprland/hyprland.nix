@@ -21,7 +21,7 @@
     ./wlogout.nix
     ./wofi.nix
     ./hyprsunset.nix
-    ./hypridle.nix
+    # ./hypridle.nix
   ];
 
   wayland.windowManager.hyprland = {
