@@ -27,10 +27,10 @@
     ./music_player.nix
     # ./neovim/neovim.nix
     ./syncthing.nix
-    ./distrobox.nix
     ./obs.nix
     ./suwayomi.nix
     ./krita.nix
     ./drawio.nix
+    ./matlab.nix
   ];
 }

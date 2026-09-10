@@ -48,7 +48,6 @@
         "udiskie"
         "nm-applet"
         "waybar"
-        "hypr-wallpaper daemon"
         "swaybg -m fill -i $(\cat ~/.config/hypr/wallpaper-path.txt)"
         "battery-notification"
       ];

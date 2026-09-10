@@ -7,7 +7,6 @@
     ./rust.nix
     ./stm32/stm32.nix
     ./octave.nix
-    ./matlab.nix
     ./rerun.nix
     ./sqlite.nix
     ./latex.nix
