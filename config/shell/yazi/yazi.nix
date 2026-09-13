@@ -40,14 +40,14 @@ in
       mgr = {
         sort_by = "natural";
       };
-      open.append_rules = [
+      open.rules = [
         {
           mime = "image/*";
-          use = "set-wallpaper";
+          use = [ "open" "set-wallpaper"];
         }
         {
           mime = "application/pdf";
-          use = "okular";
+          use = [ "open" "okular" ];
         }
       ];
       opener.set-wallpaper = [
