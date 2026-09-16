@@ -32,5 +32,6 @@
     ./krita.nix
     ./drawio.nix
     ./matlab.nix
+    ./thunderbird.nix
   ];
 }

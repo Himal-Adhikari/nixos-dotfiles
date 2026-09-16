@@ -52,7 +52,7 @@ in
       ];
       opener.set-wallpaper = [
         {
-          run  = "echo $1 > ~/.config/hypr/wallpaper-path.txt; killall swaybg; swaybg -m fill -i $1";
+          run  = "echo %s1 > ~/.config/hypr/wallpaper-path.txt; killall swaybg; swaybg -m fill -i %s1";
           for  = "linux";
           desc = "Set as wallpaper";
           orphan = true;
@@ -60,7 +60,7 @@ in
       ];
       opener.okular = [
         {
-          run  = "okular \"$1\"";
+          run  = "okular %s1";
           for  = "linux";
           desc = "Open with Okular";
           orphan = true;
@@ -77,7 +77,7 @@ in
         }
         {
           on = "<C-n>";
-          run = "shell 'dragon-drop -x -i -T \"$1\"'";
+          run = "shell 'dragon-drop -x -i -T %s1'";
         }
 
         # Copy to System Clipboard
