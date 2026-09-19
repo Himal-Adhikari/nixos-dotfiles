@@ -30,7 +30,7 @@ in
     };
 
     plugins = {
-      smart-enter = pkgs.yaziPlugins.smart-enter;
+      # smart-enter = pkgs.yaziPlugins.smart-enter;
       relative-motions = pkgs.yaziPlugins.relative-motions;
     };
 
@@ -70,11 +70,11 @@ in
 
     keymap = {
       mgr.prepend_keymap = [
-        {
-          on = "l"; 
-          run = "plugin smart-enter";
-          desc = "Enter the child directory, or open the file";
-        }
+        # {
+        #   on = "l"; 
+        #   run = "plugin smart-enter";
+        #   desc = "Enter the child directory, or open the file";
+        # }
         {
           on = "<C-n>";
           run = "shell 'dragon-drop -x -i -T %s1'";
