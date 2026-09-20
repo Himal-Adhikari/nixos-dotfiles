@@ -33,5 +33,6 @@
     ./drawio.nix
     ./matlab.nix
     ./godot.nix
+    ./aseprite.nix
   ];
 }
