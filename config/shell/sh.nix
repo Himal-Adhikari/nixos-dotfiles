@@ -84,8 +84,4 @@ in
     gh
     fzf
   ];
-
-  home.sessionVariables = {
-    EDITOR = "hx";
-  };
 }

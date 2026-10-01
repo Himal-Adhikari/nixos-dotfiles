@@ -32,7 +32,7 @@
   };
 
   home.sessionVariables = {
-
+    EDITOR = "hx";
   };
 
 }
