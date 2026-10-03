@@ -5,7 +5,8 @@
     ./c_cpp.nix
     ./python.nix
     ./rust.nix
-    ./stm32/stm32.nix
+    ./arduino.nix
+    ./stm32.nix
     ./octave.nix
     ./rerun.nix
     ./sqlite.nix
